@@ -25,6 +25,7 @@ const webpackConfig = () => {
             alias: {
                 '@': resolve('./docs'),
                 '@lib': resolve('./src'),
+                vue$: !isProduction ? 'vue/dist/vue.runtime.js' : 'vue/dist/vue.runtime.min.js',
                 node_modules: resolve('./node_modules')
             }
         },
@@ -147,10 +148,10 @@ const webpackConfig = () => {
             mode: 'development',
             devtool: 'source-map',
             devServer: {
-                contentBase: './',
+                contentBase: ['./dist', './src', './docs'],
                 watchContentBase: true,
                 open: true,
-                compress: false,
+                compress: true,
                 hot: true,
                 port: 8080,
                 historyApiFallback: true
