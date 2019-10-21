@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * RADIUSES
+ */
+
+// Variables
+
+$u-radiuses-map: $f-radiuses !default;
+
+// Output
+
+@if $s-radiuses-enabled {
+  @each $_radius-name, $_radius-value in $u-radiuses-map {
+    .u-radius-#{$_radius-name} {
+      border-radius: $_radius-value !important;
+    }
+  }
+}

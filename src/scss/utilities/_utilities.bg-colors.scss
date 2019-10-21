@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * BG COLORS
+ */
+
+// Variables
+
+$u-bg-colors-maps: $f-colors !default;
+
+// Output
+
+@if ($s-bg-colors-enabled) {
+  @each $_bg-color-name, $_bg-color-value in $u-bg-colors-maps {
+    .u-bg-color-#{$_bg-color-name} {
+      background-color: $_bg-color-value !important;
+    }
+  }
+}

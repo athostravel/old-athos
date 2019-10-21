@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * PX TO EM
+ */
+
+@function em($_value, $_baseline: $s-config-font-size-base) {
+  @if unit($_value) == 'em' {
+    @return $_value;
+  }
+
+  @else {
+    @if unitless($_value) {
+      $_value: $_value + 0;
+    }
+
+    @return $_value / $_baseline * 1em;
+  }
+}

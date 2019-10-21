@@ -1,0 +1,49 @@
+/* -----------------------------------------------------------------------------
+ * RATIOS
+ */
+
+@mixin ratio($_width: 1, $_height: 1) {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: ($_height / $_width) * 100%;
+    content: "";
+  }
+}
+
+@mixin ratio-override($_width: 1, $_height: 1) {
+  &::before {
+    padding-top: ($_height / $_width) * 100%;
+  }
+}
+
+@mixin ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+// Unsets
+
+@mixin ratio-unset {
+  position: static;
+
+  &::before {
+    display: inline;
+    width: auto;
+    padding-top: 0;
+    content: normal;
+  }
+}
+
+@mixin ratio-content-unset {
+  position: static;
+  top: auto;
+  left: auto;
+  height: auto;
+  width: auto;
+}

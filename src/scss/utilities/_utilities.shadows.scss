@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * SHADOWS
+ */
+
+// Variables
+
+$u-shadows-map: $f-shadows !default;
+
+// Output
+
+@if $s-shadows-enabled {
+  @each $_shadow-name, $_shadow-value in $u-shadows-map {
+    .u-shadow-#{$_shadow-name} {
+      box-shadow: $_shadow-value !important;
+    }
+  }
+}

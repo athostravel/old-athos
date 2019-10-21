@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * ALIGNMENTS
+ */
+
+// Variables
+
+$u-align-alignments: (left, center, right) !default;
+
+// Output
+
+@if $s-align-enabled {
+  @each $_alignment in $u-align-alignments {
+    .u-align-#{$_alignment} {
+      text-align: $_alignment !important;
+    }
+  }
+}

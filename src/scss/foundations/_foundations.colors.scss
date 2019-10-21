@@ -1,0 +1,158 @@
+/* -----------------------------------------------------------------------------
+ * COLORS BRAND
+ */
+
+/* Map Colors
+ * -------------------------------------------------------------------------- */
+
+$f-colors: () !default;
+
+/* Config
+ * -------------------------------------------------------------------------- */
+
+$f-colors-opacityFrom: 50;
+$f-colors-opacityTo: 90;
+$f-colors-opacityisDivisibleBy: 10;
+
+/* Añade un color al mapa de colores
+ * -------------------------------------------------------------------------- */
+
+@mixin add-color($name, $color) {
+  $f-colors: map-merge($f-colors, ($name: $color)) !global;
+}
+
+/* Crea las variantes light y dark del color
+ * -------------------------------------------------------------------------- */
+
+@mixin f-color-variant($colorName, $variantName, $enabledOpacity: true) {
+  $operator: '-';
+
+  @if ($variantName == 'light') {
+    $operator: '+';
+  }
+
+  // hsl
+  --color-#{$colorName}-#{$variantName}-hsl: var(--color-#{$colorName}-hue), var(--color-#{$colorName}-saturation), calc(var(--color-#{$colorName}-lumnosity) #{$operator} var(--lumnosity-extra));
+  --color-#{$colorName}-#{$variantName}-100-hsl: var(--color-#{$colorName}-hue), var(--color-#{$colorName}-saturation), calc(var(--color-#{$colorName}-lumnosity) #{$operator} calc(var(--lumnosity-extra) + var(--lumnosity-additional)));
+
+  @for $i from 2 through 9 {
+    --color-#{$colorName}-#{$variantName}-#{$i * 100}-hsl: var(--color-#{$colorName}-hue), var(--color-#{$colorName}-saturation), calc(var(--color-#{$colorName}-lumnosity) #{$operator} calc(var(--lumnosity-extra) + calc(var(--lumnosity-additional) * #{$i})));
+  }
+
+  // Variant
+  --color-#{$colorName}-#{$variantName}: #{'hsl(var(--color-#{$colorName}-#{$variantName}-hsl))'};
+
+  // Añade el color al mapa de colores
+  @include add-color('#{$colorName}-#{$variantName}', var(#{'--color-#{$colorName}-#{$variantName}'}));
+
+  // Opacity
+  @if $enabledOpacity {
+    @for $o from $f-colors-opacityFrom through $f-colors-opacityTo {
+      @if ($o % $f-colors-opacityisDivisibleBy == 0) {
+        --color-#{$colorName}-#{$variantName}-opacity-#{$o}: #{'hsla(var(--color-#{$colorName}-#{$variantName}-hsl), #{$o / 100})'};
+
+        // Añade el color al mapa de colores
+        @include add-color('#{$colorName}-#{$variantName}-opacity-#{$o}', var(#{'--color-#{$colorName}-#{$variantName}-opacity-#{$o}'}));
+      }
+    }
+  }
+
+  // Variants
+  @for $i from 1 through 9 {
+    --color-#{$colorName}-#{$variantName}-#{$i * 100}: #{'hsl(var(--color-#{$colorName}-#{$variantName}-#{$i * 100}-hsl))'};
+
+    // Añade el color al mapa de colores
+    @include add-color('#{$colorName}-#{$variantName}-#{$i * 100}', var(#{'--color-#{$colorName}-#{$variantName}-#{$i * 100}'}));
+
+    // Opacity
+    @if $enabledOpacity {
+      @for $o from $f-colors-opacityFrom through $f-colors-opacityTo {
+        @if ($o % $f-colors-opacityisDivisibleBy == 0) {
+          --color-#{$colorName}-#{$variantName}-#{$i * 100}-opacity-#{$o}: #{'hsla(var(--color-#{$colorName}-#{$variantName}-#{$i * 100}-hsl), #{$o / 100})'};
+
+          // Añade el color al mapa de colores
+          @include add-color('#{$colorName}-#{$variantName}-#{$i * 100}-opacity-#{$o}', var(#{'--color-#{$colorName}-#{$variantName}-#{$i * 100}-opacity-#{$o}'}));
+        }
+      }
+    }
+  }
+}
+
+/* Crea las variables para un color, incluidos lights, darks, etc.
+ * -------------------------------------------------------------------------- */
+
+@mixin f-color($name, $hue, $saturation, $lumnosity, $enabledOpacity: true) {
+  --color-#{$name}-hue: #{$hue};
+  --color-#{$name}-saturation: #{$saturation};
+  --color-#{$name}-lumnosity: #{$lumnosity};
+
+  // Color hsl
+  --color-#{$name}-hsl: var(--color-#{$name}-hue), var(--color-#{$name}-saturation), var(--color-#{$name}-lumnosity);
+
+  // Color
+  --color-#{$name}: #{'hsl(var(--color-#{$name}-hsl))'};
+
+  // Añade el color al mapa de colores
+  @include add-color('#{$name}', var(#{'--color-#{$name}'}));
+
+  // Opacity
+  @if $enabledOpacity {
+    @for $o from $f-colors-opacityFrom through $f-colors-opacityTo {
+      @if ($o % $f-colors-opacityisDivisibleBy == 0) {
+        --color-#{$name}-opacity-#{$o}: #{'hsla(var(--color-#{$name}-hsl), #{$o / 100})'};
+
+        @include add-color('#{$name}-opacity-#{$o}', var(#{'--color-#{$name}-opacity-#{$o}'}));
+      }
+    }
+  }
+
+  // Lights
+  @include f-color-variant($name, 'light', false);
+
+  // Darks
+  @include f-color-variant($name, 'dark', false);
+}
+
+/* Crea los whites, greys and blacks colors
+ * -------------------------------------------------------------------------- */
+
+@mixin shades($enabledOpacity: true) {
+  // Whites, greys and blacks
+  @for $i from 0 through 20 {
+    --color-shade-#{$i * 100}-hsl: 0, 0%, #{100 - ($i * 5)}%;
+    --color-shade-#{$i * 100}: #{'hsl(var(--color-shade-#{$i * 100}-hsl))'};
+
+    // Añade el color al mapa de colores
+    @include add-color('shade-#{$i * 100}', var(#{'--color-shade-#{$i * 100}'}));
+
+    // Opacity
+    @if $enabledOpacity {
+      @for $o from $f-colors-opacityFrom through $f-colors-opacityTo {
+        @if ($o % $f-colors-opacityisDivisibleBy == 0) {
+          --color-shade-#{$i * 100}-opacity-#{$o}: #{'hsla(var(--color-shade-#{$i * 100}-hsl), #{$o / 100})'};
+
+          // Añade el color al mapa de colores
+          @include add-color('shade-#{$i * 100}-opacity-#{$o}', var(#{'--color-shade-#{$i * 100}-opacity-#{$o}'}));
+        }
+      }
+    }
+  }
+}
+
+/* Añade los colores al :root
+ * -------------------------------------------------------------------------- */
+
+@mixin f-colors {
+  // Lumnosity
+  --lumnosity-extra: 5%;
+  --lumnosity-additional: 5%;
+
+  // Brand colors
+  @include f-color('primary', 153, 48%, 46%);
+  @include f-color('secondary', 110, 64%, 73%);
+  @include f-color('tertiary', 110, 64%, 73%);
+  @include f-color('quaternary', 110, 64%, 73%);
+
+  // Whites, greys and blacks
+  @include shades;
+}

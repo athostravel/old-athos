@@ -1,0 +1,23 @@
+/* -----------------------------------------------------------------------------
+ * Z INDEX
+ */
+
+@mixin f-z-index {
+  --z-index-pawn: 100;
+  --z-index-knight: 200;
+  --z-index-bishop: 300;
+  --z-index-rook: 400;
+  --z-index-queen: 500;
+  --z-index-king: 600;
+}
+
+// Map
+
+$f-z-index: (
+  'pawn': var(--z-index-pawn),
+  'knight': var(--z-index-knight),
+  'bishop': var(--z-index-bishop),
+  'rook': var(--z-index-rook),
+  'queen': var(--z-index-queen),
+  'king': var(--z-index-king)
+) !default;

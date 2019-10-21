@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * COLORS
+ */
+
+// Variables
+
+$u-colors-maps: $f-colors !default;
+
+// Output
+
+@if ($s-colors-enabled) {
+  @each $_color-name, $_color-value in $u-colors-maps {
+    .u-color-#{$_color-name} {
+      color: $_color-value !important;
+    }
+  }
+}

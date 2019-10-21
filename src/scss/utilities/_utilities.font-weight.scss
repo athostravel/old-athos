@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * FONT WEIGHT
+ */
+
+// Variables
+
+$u-font-weight-values: (100, 300, 400, 600, 700, 800, 900) !default;
+
+// Output
+
+@if $s-font-weight-enabled {
+  @each $_font-weight in $u-font-weight-values {
+    .u-fw-#{$_font-weight} {
+      font-weight: $_font-weight !important;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/* -----------------------------------------------------------------------------
+ * MARGINS
+ */
+
+// Variables
+
+$u-margin-spaces: $f-spaces !default;
+$u-margin-classes: (
+  "mrt": (
+    "margin-top"
+  ),
+  "mrr": (
+    "margin-right"
+  ),
+  "mrb": (
+    "margin-bottom"
+  ),
+  "mrl": (
+    "margin-left"
+  ),
+  "mrv": (
+    "margin-top",
+    "margin-bottom"
+  ),
+  "mrh": (
+    "margin-left",
+    "margin-right"
+  ),
+  "mr" : (
+    "margin-top",
+    "margin-right",
+    "margin-bottom",
+    "margin-left"
+  )
+) !default;
+
+// Ouput
+
+@if $s-margin-enabled {
+  @each $_space-name, $_space-value in $u-margin-spaces {
+    @each $_class-name, $_class-properties in $u-margin-classes {
+      .u-#{$_class-name}-#{$_space-name} {
+        @each $_property-name in $_class-properties {
+          #{$_property-name}: $_space-value !important;
+        }
+      }
+    }
+  }
+}

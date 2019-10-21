@@ -1,0 +1,53 @@
+/* -----------------------------------------------------------------------------
+ * TRIANGLE
+ */
+
+@mixin triangle ($direction: 'bottom', $color: #000, $size: 6px) {
+  display: block;
+  width: 0;
+  height: 0;
+
+  @if $direction == 'top' {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+
+  @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+
+  @else if $direction == 'bottom' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  }
+
+  @else if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+
+  @else if $direction == 'top-left' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  }
+
+  @else if $direction == 'top-right' {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  }
+
+  @else if $direction == 'bottom-left' {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+
+  @else if $direction == 'bottom-right' {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}

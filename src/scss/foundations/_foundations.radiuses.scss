@@ -1,0 +1,19 @@
+/* -------------------------------------------------------------------------
+ * RADIUS
+ */
+
+@mixin f-radiuses {
+  --radius-s: #{em((4px))};
+  --radius-m: #{em((8px))};
+  --radius-l: #{em((12px))};
+  --radius-circle: 50%;
+}
+
+// Map
+
+$f-radiuses: (
+  's': var(--radius-s),
+  'm': var(--radius-m),
+  'l': var(--radius-l),
+  'circle': var(--radius-circle)
+) !default;

@@ -1,0 +1,15 @@
+/* -----------------------------------------------------------------------------
+ * FONT FAMILIES
+ */
+
+@mixin f-font-families {
+  --font-family-primary: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-family-icons: 'Icons';
+}
+
+// Map
+
+$f-font-families: (
+  'primary': var(--font-family-primary),
+  'icons': var(--font-family-icons)
+) !default;

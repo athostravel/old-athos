@@ -1,0 +1,15 @@
+/* -----------------------------------------------------------------------------
+ * LIST REMOVE
+ */
+
+@function list-remove($_list, $_index) {
+  $_newList: ();
+
+  @for $_i from 1 through length($_list) {
+    @if $_i != $_index {
+      $_newList: append($_newList, nth($_list, $_i), 'space');
+    }
+  }
+
+  @return $_newList;
+}

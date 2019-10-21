@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * FONT
+ */
+
+// Variables
+
+$u-font-sizes: $f-font-sizes !default;
+
+// Output
+
+@if $s-font-sizes-enabled {
+  @each $_font-size-name, $_font-size-value in $u-font-sizes {
+    .u-fz-#{$_font-size-name} {
+      font-size: $_font-size-value !important;
+    }
+  }
+}

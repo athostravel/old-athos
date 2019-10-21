@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * TEXT TRANSFORMS
+ */
+
+// Variables
+
+$u-text-transform-values: (lowercase, uppercase, capitalize) !default;
+
+// Output
+
+@if $s-text-transform-enabled {
+  @each $_text-transforms in $u-text-transform-values {
+    .u-#{$_text-transforms} {
+      text-transform: $_text-transforms !important;
+    }
+  }
+}

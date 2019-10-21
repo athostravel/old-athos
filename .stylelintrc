@@ -1,0 +1,13 @@
+{
+    "ignoreFiles": ["**/*.js", "dist/**/*.css"],
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "indentation": [ 2, { baseIndentLevel: 1 } ],
+        "length-zero-no-unit": [true, {
+            ignore: ["custom-properties"]
+        }]
+    }
+}

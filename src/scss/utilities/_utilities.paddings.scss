@@ -1,0 +1,49 @@
+/* -----------------------------------------------------------------------------
+ * PADDING
+ */
+
+// Variables
+
+$u-padding-spaces: $f-spaces !default;
+$u-padding-classes: (
+  "pdt": (
+    "padding-top"
+  ),
+  "pdr": (
+    "padding-right"
+  ),
+  "pdb": (
+    "padding-bottom"
+  ),
+  "pdl": (
+    "padding-left"
+  ),
+  "pdv": (
+    "padding-top",
+    "padding-bottom"
+  ),
+  "pdh": (
+    "padding-left",
+    "padding-right"
+  ),
+  "pd" : (
+    "padding-top",
+    "padding-right",
+    "padding-bottom",
+    "padding-left"
+  )
+) !default;
+
+// Ouput
+
+@if $s-padding-enabled {
+  @each $_space-name, $_space-value in $u-padding-spaces {
+    @each $_class-name, $_class-properties in $u-padding-classes {
+      .u-#{$_class-name}-#{$_space-name} {
+        @each $_property-name in $_class-properties {
+          #{$_property-name}: $_space-value !important;
+        }
+      }
+    }
+  }
+}

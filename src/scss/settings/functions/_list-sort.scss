@@ -1,0 +1,21 @@
+/* -----------------------------------------------------------------------------
+ * LIST SORT
+ */
+
+@function list-sort($_list) {
+  $_sortedlist: ();
+
+  @while length($_list) > 0 {
+    $_value: nth($_list, 1);
+
+    @each $_item in $_list {
+      @if $_item < $_value {
+        $_value: $_item;
+      }
+    }
+    $_sortedlist: append($_sortedlist, $_value, 'space');
+    $_list: list-remove($_list, index($_list, $_value));
+  }
+
+  @return $_sortedlist;
+}

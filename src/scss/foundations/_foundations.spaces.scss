@@ -1,0 +1,37 @@
+/* -----------------------------------------------------------------------------
+ * SPACES
+ */
+
+@mixin f-spaces {
+  --space-3xs: #{em((2px))};
+  --space-2xs: #{em((4px))};
+  --space-xs: #{em((8px))};
+  --space-s: #{em((16px))};
+  --space-m: #{em((24px))};
+  --space-l: #{em((32px))};
+  --space-xl: #{em((40px))};
+  --space-2xl: #{em((48px))};
+  --space-3xl: #{em((56px))};
+  --space-4xl: #{em((64px))};
+  --space-5xl: #{em((72px))};
+  --space-6xl: #{em((80px))};
+  --space-7xl: #{em((88px))};
+}
+
+// Map
+
+$f-spaces: (
+  '3xs': var(--space-3xs),
+  '2xs': var(--space-2xs),
+  'xs': var(--space-xs),
+  's': var(--space-s),
+  'm': var(--space-m),
+  'l': var(--space-l),
+  'xl' : var(--space-xl),
+  '2xl': var(--space-2xl),
+  '3xl': var(--space-3xl),
+  '4xl': var(--space-4xl),
+  '5xl': var(--space-5xl),
+  '6xl': var(--space-6xl),
+  '7xl': var(--space-7xl)
+) !default;

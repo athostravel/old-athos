@@ -1,0 +1,53 @@
+/* -----------------------------------------------------------------------------
+ * FONTS SIZES
+ */
+
+@mixin f-font-sizes {
+  --font-size-body: #{em(16px)};
+  --font-size-3xs: #{em(8px)};
+  --font-size-2xs: #{em(10px)};
+  --font-size-xs: #{em(12px)};
+  --font-size-s: #{em(14px)};
+  --font-size-m: #{em(16px)};
+  --font-size-l: #{em(18px)};
+  --font-size-xl: #{em(20px)};
+  --font-size-2xl: #{em(24px)};
+  --font-size-3xl: #{em(28px)};
+  --font-size-4xl: #{em(32px)};
+  --font-size-5xl: #{em(36px)};
+  --font-size-6xl: #{em(40px)};
+  --font-size-7xl: #{em(44px)};
+  --font-size-8xl: #{em(48px)};
+  --font-size-9xl: #{em(52px)};
+  --font-size-10xl: #{em(56px)};
+  --font-size-11xl: #{em(60px)};
+  --font-size-12xl: #{em(64px)};
+  --font-size-13xl: #{em(68px)};
+  --font-size-14xl: #{em(72px)};
+}
+
+// Map
+
+$f-font-sizes: (
+  'body': var(--font-size-body),
+  '3xs': var(--font-size-3xs),
+  '2xs': var(--font-size-2xs),
+  'xs': var(--font-size-xs),
+  's': var(--font-size-s),
+  'm': var(--font-size-m),
+  'l': var(--font-size-l),
+  'xl': var(--font-size-xl),
+  '2xl': var(--font-size-2xl),
+  '3xl': var(--font-size-3xl),
+  '4xl': var(--font-size-4xl),
+  '5xl': var(--font-size-5xl),
+  '6xl': var(--font-size-6xl),
+  '7xl': var(--font-size-7xl),
+  '8xl': var(--font-size-8xl),
+  '9xl': var(--font-size-9xl),
+  '10xl': var(--font-size-10xl),
+  '11xl': var(--font-size-11xl),
+  '12xl': var(--font-size-12xl),
+  '13xl': var(--font-size-13xl),
+  '14xl': var(--font-size-14xl)
+) !default;

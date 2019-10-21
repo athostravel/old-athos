@@ -1,0 +1,23 @@
+/* -----------------------------------------------------------------------------
+ * LINE HEIGHTS
+ */
+
+@mixin f-line-heights {
+  --line-height-m: 1;
+  --line-height-l: 1.2;
+  --line-height-xl: 1.4;
+  --line-height-2xl: 1.6;
+  --line-height-3xl: 1.8;
+  --line-height-4xl: 2;
+}
+
+// Map
+
+$f-line-heights: (
+  'm': var(--line-height-m),
+  'l': var(--line-height-l),
+  'xl': var(--line-height-xl),
+  '2xl': var(--line-height-2xl),
+  '3xl': var(--line-height-3xl),
+  '4xl': var(--line-height-4xl)
+) !default;

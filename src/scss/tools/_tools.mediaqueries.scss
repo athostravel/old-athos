@@ -1,0 +1,86 @@
+/* -----------------------------------------------------------------------------
+ * MEDIAQUERIES
+ */
+
+// Get next breakpoint in map
+
+@function map-next-value($_map, $_input) {
+  $_values: list-sort(map-values($_map));
+
+  @each $_value in $_values {
+    @if em($_value) > em($_input) {
+      @return $_value;
+    }
+  }
+
+  @error 'Next value is not defined.';
+}
+
+// Type of breakpoint
+
+@function breakpoint-type($_value) {
+  @if type-of($_value) == number {
+    @return em($_value);
+  }
+
+  @else if map-has-key($s-mq-breakpoints, $_value) {
+    @return em(map-get($s-mq-breakpoints, $_value));
+  }
+
+  @else if $_value == 'up' or $_value == 'down' or $_value == 'only' {
+    @return $_value;
+  }
+
+  @else {
+    @error "Breakpoint `#{$_value}` doesn't exists. Create a new one, choose one of these: #{map-keys($s-mq-breakpoints)} or write a value in pixels.";
+  }
+}
+
+// Set breakpoint
+
+@function breakpoint($_value) {
+  @if $_value == 'retina' {
+    @return '(-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi)';
+  }
+
+  @else if $_value == 'landscape' or $_value == 'portrait' {
+    @return '(orientation: #{$_value})';
+  }
+
+  $_breakpoint: breakpoint-type(nth($_value, 1));
+  $_breakpoint-direction: if(length($_value) > 1, breakpoint-type(nth($_value, 2)), 'up');
+  $_result: '';
+
+  @if $_breakpoint-direction == 'up' {
+    $_result: $_result + '(min-width: #{$_breakpoint})';
+  }
+
+  @else if $_breakpoint-direction == 'down' {
+    $_result: $_result + '(max-width: #{$_breakpoint - em(1px)})';
+  }
+
+  @else if $_breakpoint-direction == 'only' {
+    $_breakpoint-next: em(map-next-value($s-mq-breakpoints, $_breakpoint));
+    $_result: $_result + '(min-width: #{$_breakpoint}) and (max-width: #{$_breakpoint-next - em(1px)})';
+  }
+
+  @else if type-of($_breakpoint-direction) == number and $_breakpoint < $_breakpoint-direction {
+    $_result: $_result + '(min-width: #{$_breakpoint}) and (max-width: #{$_breakpoint-direction - em(1px)})';
+  }
+
+  @else {
+    @error "Breakpoint can't be the same or smaller. Correct example: (small medium) or (544px 768px)";
+  }
+
+  @return $_result;
+}
+
+// Mixin
+
+@mixin breakpoint($_value, $_media-type: $s-mq-media-type) {
+  $_result: breakpoint($_value);
+
+  @media #{$_media-type} and #{$_result} {
+    @content;
+  }
+}

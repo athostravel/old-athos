@@ -1,0 +1,17 @@
+/* -----------------------------------------------------------------------------
+ * FONT FAMILIES
+ */
+
+// Variables
+
+$u-font-families: $f-font-families !default;
+
+// Output
+
+@if $s-font-family-enabled {
+  @each $_font-family-name, $_font-family-value in $u-font-families {
+    .u-ff-#{$_font-family-name} {
+      font-family: $_font-family-value !important;
+    }
+  }
+}

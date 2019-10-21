@@ -1,0 +1,33 @@
+/* -----------------------------------------------------------------------------
+ * FONTS
+ * -----------------------------------------------------------------------------
+ * Explicación mapa:
+ *
+ * "Nombre de familia que se usará en el css": (
+ *   "Nombre del archivo": (font weight, font style, nombre local),
+ * )
+ *
+ * Ejemplo:
+ * "Lato": (
+ *   "Lato-Hairline": (100, normal, "Lato-Hairline")
+ * )
+ */
+
+$fonts-families: () !default;
+
+@if $fonts-families {
+  @each $font-family, $fonts in $fonts-families {
+    @each $font, $opts in $fonts {
+      @font-face {
+        font-family: $font-family;
+        src:
+          local(nth($opts, 3)),
+          url('~@/assets/fonts/#{$font}.woff2') format('woff2'),
+          url('~@/assets/fonts/#{$font}.woff') format('woff');
+        font-weight: nth($opts, 1);
+        font-style: nth($opts, 2);
+        font-display: swap;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/* -----------------------------------------------------------------------------
+ * DISPLAY
+ */
+
+// Variables
+
+$u-display-classes: (
+  "none": (display: none),
+  "block": (display: block),
+  "iblock": (display: inline-block),
+  "inline": (display: inline)
+) !default;
+
+// Output
+
+@if $s-display-enabled {
+  @each $_properties, $_values in $u-display-classes {
+    .u-dp#{if($_properties, "-", "")}#{$_properties} {
+      @each $_property, $_value in $_values {
+        #{$_property}: $_value !important;
+      }
+    }
+  }
+}

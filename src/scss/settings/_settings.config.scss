@@ -1,0 +1,53 @@
+/* -----------------------------------------------------------------------------
+ * CONFIG
+ */
+
+/* -----------------------------------------------------------------------------
+ * Font size base for functions, etc. (not document font size)
+ */
+
+$s-config-font-size-base: 16px !default;
+
+/* -----------------------------------------------------------------------------
+ * Mediaqueries
+ */
+
+// Media type
+
+$s-mq-media-type: 'screen' !default;
+
+// Main breakpoint variables
+
+$s-mq-breakpoint-s: 600px !default;
+$s-mq-breakpoint-m: 900px !default;
+$s-mq-breakpoint-l: 1200px !default;
+$s-mq-breakpoint-xl: 1500px !default;
+$s-mq-breakpoint-2xl: 1800px !default;
+
+// Breakpoints map
+
+$s-mq-breakpoints: (
+  's': $s-mq-breakpoint-s,
+  'm': $s-mq-breakpoint-m,
+  'l': $s-mq-breakpoint-l,
+  'xl': $s-mq-breakpoint-xl,
+  '2xl': $s-mq-breakpoint-2xl
+) !default;
+
+/* -----------------------------------------------------------------------------
+ * Utilities
+ */
+
+$s-align-enabled: false !default;
+$s-bg-colors-enabled: false !default;
+$s-colors-enabled: false !default;
+$s-display-enabled: false !default;
+$s-flex-enabled: false !default;
+$s-font-family-enabled: false !default;
+$s-font-sizes-enabled: true !default;
+$s-font-weight-enabled: false !default;
+$s-margin-enabled: false !default;
+$s-padding-enabled: false !default;
+$s-radiuses-enabled: false !default;
+$s-shadows-enabled: false !default;
+$s-text-transform-enabled: false !default;

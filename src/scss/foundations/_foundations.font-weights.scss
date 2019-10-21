@@ -1,0 +1,25 @@
+/* -----------------------------------------------------------------------------
+ * FONT WEIGHTS
+ */
+
+@mixin f-font-weights {
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
+
+// Map
+
+$f-font-weights: (
+  'thin': var(--font-weight-thin),
+  'light': var(--font-weight-light),
+  'regular': var(--font-weight-regular),
+  'medium': var(--font-weight-medium),
+  'semi-bold': var(--font-weight-semi-bold),
+  'bold': var(--font-weight-bold),
+  'black': var(--font-weight-black)
+) !default;
