@@ -7,42 +7,74 @@
         </Markdown>
 
         <CodePreview vertical>
-            <AtButton text="Button" />
+            <div class="elements">
+                <AtButton text="Button" />
+                <AtButton text="Button" icon="avatar" />
+                <AtButton text="Button" icon="avatar" icon-align="right" />
+                <AtButton icon="avatar" />
+            </div>
+
+            <div class="elements">
+                <AtButton text="Disabled" disabled />
+            </div>
+
+            <div class="elements">
+                <AtButton text="Tiny" size="tiny" />
+                <AtButton text="Small" size="small" />
+                <AtButton text="Default" />
+                <AtButton text="Medium" size="medium" />
+                <AtButton text="Large" size="large" />
+            </div>
         </CodePreview>
 
         <Markdown>
-            ## Types and states
+            ## Outlined
         </Markdown>
 
         <CodePreview vertical>
-            <AtButton text="Default" />
-            <AtButton text="Outlined" outlined />
-            <AtButton text="Disabled" disabled tag="button" />
+            <div class="elements">
+                <AtButton text="Outlined" outlined />
+                <AtButton text="Outlined" icon="avatar" outlined />
+                <AtButton text="Outlined" icon="avatar" icon-align="right" outlined />
+                <AtButton icon="avatar" outlined />
+            </div>
+
+            <div class="elements">
+                <AtButton text="Disabled" disabled outlined />
+            </div>
+
+            <div class="elements">
+                <AtButton text="Tiny" size="tiny" outlined />
+                <AtButton text="Small" size="small" outlined />
+                <AtButton text="Default" outlined />
+                <AtButton text="Medium" size="medium" outlined />
+                <AtButton text="Large" size="large" outlined />
+            </div>
         </CodePreview>
 
         <Markdown>
-            ## Icons
-        </Markdown>
-
-        <CodePreview :vertical="true">
-            <AtButton icon="avatar" />
-            <AtButton icon="avatar" outlined />
-            <AtButton text="Button" icon="avatar" />
-            <AtButton text="Button" icon="avatar" outlined />
-            <AtButton text="Button" icon="avatar" icon-align="right" tag="button" />
-            <AtButton text="Button" outlined icon="avatar" icon-align="right" />
-        </CodePreview>
-
-        <Markdown>
-            ## Sizes
+            ## Casper
         </Markdown>
 
         <CodePreview vertical>
-            <AtButton text="Tiny" size="tiny" />
-            <AtButton text="Small" size="small" />
-            <AtButton text="Default" />
-            <AtButton text="Medium" size="medium" />
-            <AtButton text="Large" size="large" />
+            <div class="elements">
+                <AtButton text="Casper" casper />
+                <AtButton text="Casper" icon="avatar" casper />
+                <AtButton text="Casper" icon="avatar" icon-align="right" casper />
+                <AtButton icon="avatar" casper />
+            </div>
+
+            <div class="elements">
+                <AtButton text="Disabled" disabled casper />
+            </div>
+
+            <div class="elements">
+                <AtButton text="Tiny" size="tiny" casper />
+                <AtButton text="Small" size="small" casper />
+                <AtButton text="Default" casper />
+                <AtButton text="Medium" size="medium" casper />
+                <AtButton text="Large" size="large" casper />
+            </div>
         </CodePreview>
     </Layout>
 </template>

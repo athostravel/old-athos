@@ -5,6 +5,7 @@
         :href="tag === 'a' && href"
         :class="{
             'c-button--outlined' : outlined,
+            'c-button--casper' : casper,
             'c-button--tiny' : size && size === 'tiny',
             'c-button--small' : size && size === 'small',
             'c-button--medium' : size && size === 'medium',
@@ -60,6 +61,10 @@
                 type: Boolean,
                 default: false
             },
+            casper: {
+                type: Boolean,
+                default: false
+            },
             size: {
                 type: String,
                 default: undefined
@@ -74,10 +79,10 @@
 
 <style lang="scss">
   @mixin c-button-hover($this) {
-    #{$this}--is-active:not(:disabled):not(&--is-disabled),
-    &:active:not(:disabled):not(&--is-disabled),
-    &:focus:not(:disabled):not(&--is-disabled),
-    &:hover:not(:disabled):not(&--is-disabled) {
+    #{$this}--is-active:not(:disabled):not(#{$this}--is-disabled),
+    &:active:not(:disabled):not(#{$this}--is-disabled),
+    &:focus:not(:disabled):not(#{$this}--is-disabled),
+    &:hover:not(:disabled):not(#{$this}--is-disabled) {
       @content;
     }
   }
@@ -87,7 +92,7 @@
 
     --c-button-size: #{em(16px)};
     --c-button-text-align: center;
-    --c-button-background-color: var(--color-shade-800);
+    --c-button-background-color: currentColor;
     --c-button-color: var(--color-shade-0);
     --c-button-font-size: #{em(16px)};
     --c-button-font-weight: 400;
@@ -95,37 +100,58 @@
     --c-button-padding: #{em(8px) em(16px)};
     --c-button-border-radius: #{em(2px)};
     --c-button-border-style: solid;
-    --c-button-border-width: #{em(1px)};
-    --c-button-border-color: var(--c-button-background-color);
+    --c-button-border-width: 0;
+    --c-button-border-color: currentColor;
     --c-button-min-height: #{em(48px)};
     --c-button-icon-size: #{em(16px)};
+    --c-button-overlay-opacity: 0.25;
+    --c-button-overlay-color: #fff;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
     text-align: var(--c-button-text-align);
     background-color: var(--c-button-background-color);
-    color: var(--c-button-color);
     font-size: var(--c-button-size);
     text-transform: var(--c-button-text-transform);
     border-radius: var(--c-button-border-radius);
+    padding: var(--c-button-padding);
+    min-height: var(--c-button-min-height);
     border-style: var(--c-button-border-style);
     border-width: var(--c-button-border-width);
     border-color: var(--c-button-border-color);
-    padding: var(--c-button-padding);
-    min-height: var(--c-button-min-height);
-    transition: all 0.3s;
+    transition: all 0.6s;
+
+    &::before {
+      content: "";
+      display: block;
+      left: 50%;
+      top: 50%;
+      width: 1px;
+      height: 1px;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      opacity: 1;
+      z-index: 1;
+      transition: all 0.6s;
+      border-radius: 50%;
+    }
 
     &__text {
       font-size: var(--c-button-font-size);
       font-weight: var(--c-button-font-weight);
+      color: var(--c-button-color);
+      z-index: 2;
     }
 
     &__icon {
       font-size: var(--c-button-icon-size);
       display: flex;
+      color: var(--c-button-color);
+      z-index: 2;
 
       &--left {
         margin-right: 0.5em;
@@ -138,18 +164,32 @@
     }
 
     @include c-button-hover($this) {
-      --c-button-background-color: var(--color-shade-500);
+      &::before {
+        background-color: var(--c-button-overlay-color);
+        opacity: var(--c-button-overlay-opacity);
+        width: 110%;
+        height: 110%;
+        border-radius: var(--c-button-border-radius);
+      }
     }
 
     &--outlined {
       --c-button-background-color: transparent;
-      --c-button-color: var(--color-shade-800);
-      --c-button-border-color: var(--color-shade-800);
+      --c-button-overlay-color: currentColor;
+      --c-button-color: currentColor;
+      --c-button-border-width: 1px;
+      --c-button-overlay-opacity: 1;
 
       @include c-button-hover($this) {
         --c-button-color: var(--color-shade-0);
-        --c-button-border-color: var(--color-shade-500);
       }
+    }
+
+    &--casper {
+      --c-button-background-color: transparent;
+      --c-button-overlay-color: currentColor;
+      --c-button-color: currentColor;
+      --c-button-border-width: 1px;
     }
 
     &--is-disabled,
