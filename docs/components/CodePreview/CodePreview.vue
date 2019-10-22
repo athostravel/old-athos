@@ -8,33 +8,35 @@
                 Preview <span class="fas fa-expand-arrows-alt"></span>
             </button>
         </div>
-        <div
-            v-if="preview"
-            :class="{ 'is-expanded': isPreviewExpanded }"
-            :style="{
-                maxWidth: width && vertical && widthToEm(width),
-                backgroundColor: bg
-            }"
-            class="c-code-preview__component"
-        >
-            <slot />
-            <button v-show="isPreviewExpanded" class="c-code-preview__close" @click.prevent="closePreview()">
-                <span class="fas fa-compress-arrows-alt"></span>
-            </button>
-        </div>
-        <div class="c-code-preview__box">
-            <div class="c-code-preview__code" :class="{ 'is-active': isCodeOpen || !preview }">
-                <button class="c-code-preview__copy" @click="copyCode()">
-                    <span v-if="!isCopied">Copy</span>
-                    <span v-else>Copied to clipboard!</span>
+        <div class="c-code-preview__inner">
+            <div
+                v-if="preview"
+                :class="{ 'is-expanded': isPreviewExpanded }"
+                :style="{
+                    maxWidth: width && vertical && widthToEm(width),
+                    backgroundColor: bg
+                }"
+                class="c-code-preview__component"
+            >
+                <slot />
+                <button v-show="isPreviewExpanded" class="c-code-preview__close" @click.prevent="closePreview()">
+                    <span class="fas fa-compress-arrows-alt"></span>
                 </button>
-                <CodeSnippet class="c-code-preview__code-snippet">
-                    <slot />
-                </CodeSnippet>
-                <button v-if="preview" class="c-code-preview__show-box" :class="{ 'is-active': isCodeOpen }" @click="toggleCode()">
-                    <span v-show="!isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon fas fa-code"></span> Show code</span>
-                    <span v-show="isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon fas fa-eye-slash"></span> Hide code</span>
-                </button>
+            </div>
+            <div class="c-code-preview__box">
+                <div class="c-code-preview__code" :class="{ 'is-active': isCodeOpen || !preview }">
+                    <button class="c-code-preview__copy" @click="copyCode()">
+                        <span v-if="!isCopied">Copy</span>
+                        <span v-else>Copied to clipboard!</span>
+                    </button>
+                    <CodeSnippet class="c-code-preview__code-snippet">
+                        <slot />
+                    </CodeSnippet>
+                    <button v-if="preview" class="c-code-preview__show-box" :class="{ 'is-active': isCodeOpen }" @click="toggleCode()">
+                        <span v-show="!isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon fas fa-code"></span> Show code</span>
+                        <span v-show="isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon fas fa-eye-slash"></span> Hide code</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -129,6 +131,10 @@
     margin-top: calc(var(--space-between-tags) * 1.2);
     margin-bottom: calc(var(--space-between-tags) * 1.2);
 
+    &__inner {
+      border: 0.0625rem solid var(--color-secondary);
+    }
+
     &__legends {
       display: flex;
       justify-content: space-between;
@@ -160,8 +166,6 @@
     &__component {
       overflow: auto;
       padding: 1.5rem;
-      border: 0.0625rem solid var(--color-secondary);
-      border-bottom: 0;
 
       &.is-expanded {
         position: fixed;
@@ -195,9 +199,9 @@
     }
 
     &__code {
-      border: 0.0625rem solid var(--color-secondary);
       position: relative;
       background-color: #f7f7f7;
+      border-top: 0.0625rem solid var(--color-secondary);
 
       &:not(.is-active) {
         max-height: 3rem;
@@ -268,11 +272,13 @@
     }
 
     &--vertical {
-      @include breakpoint(l) {
-        display: flex;
-        flex-wrap: wrap;
-
+      @include breakpoint(m) {
         #{$this} {
+          &__inner {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
           &__legends {
             width: 100%;
           }
@@ -290,18 +296,15 @@
             min-width: 1px;
             flex-grow: 1;
             flex-basis: 50%;
-
-            &:not(.is-expanded) {
-              border-bottom: 0.0625rem solid var(--color-secondary);
-            }
           }
 
           &__code {
-            border-left: 0;
+            border-top: 0;
             max-height: none;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            border-left: 0.0625rem solid var(--color-secondary);
 
             &:not(.is-active) {
               left: 0;
