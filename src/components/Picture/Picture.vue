@@ -40,7 +40,7 @@
             },
             lazy: {
                 type: Boolean,
-                default: true
+                default: false
             },
             sources: {
                 type: Array,
