@@ -1,16 +1,14 @@
 <template>
     <Layout>
         <Markdown>
-            # Banner
+            # Banner Orion
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtBanner
-                valign="bottom"
-                align="center"
-                text="Button"
-                shadow
-                radius
+            <AtBannerOrion
+                title="¿Qué visitar en Vietnam en una semana?"
+                :picture="picture"
+                :button="button"
             />
         </CodePreview>
     </Layout>
@@ -26,6 +24,13 @@
             Layout,
             CodePreview,
             Markdown
+        },
+        data () {
+            return {
+                button: {
+                    text: 'Leer más'
+                }
+            }
         }
     }
 </script>

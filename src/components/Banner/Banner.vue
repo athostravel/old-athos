@@ -1,5 +1,7 @@
 <template>
-    <div
+    <component
+        :is="tag"
+        :href="href && tag === 'a'"
         class="c-banner"
         :class="{
             'c-banner--has-shadow' : shadow,
@@ -7,7 +9,10 @@
             'c-banner--has-overlay' : overlay
         }"
     >
-        <AtPicture class="c-banner__picture" :lazy="false" />
+        <AtPicture
+            class="c-banner__picture"
+            v-bind="picture"
+        />
         <div
             v-if="$slots.default"
             class="c-banner__box"
@@ -22,7 +27,7 @@
                 <slot />
             </div>
         </div>
-    </div>
+    </component>
 </template>
 
 <script>
@@ -34,6 +39,14 @@
             AtPicture
         },
         props: {
+            tag: {
+                type: String,
+                default: 'div'
+            },
+            href: {
+                type: String,
+                default: undefined
+            },
             align: {
                 type: String,
                 default: undefined
@@ -53,6 +66,10 @@
             overlay: {
                 type: Boolean,
                 default: false
+            },
+            picture: {
+                type: Object,
+                default: () => {}
             }
         }
     }
@@ -67,10 +84,13 @@
     --c-banner-overlay: transparent;
     --c-banner-picture-ratio-width: 13;
     --c-banner-picture-ratio-height: 17;
+    --c-banner-content-text-align: center;
     --c-banner-title-line-height: 1.4;
-    --c-banner-title-font-size: 1em;
+    --c-banner-title-font-size: #{em(26px)};
     --c-banner-title-color: #fff;
     --c-banner-title-text-align: center;
+    --c-banner-button-margin-top: #{em(24px)};
+    --c-banner-button-color: #fff;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -109,6 +129,7 @@
     &__box {
       z-index: 3;
       padding: #{em(32px)};
+      min-width: #{em(1px)};
 
       &--v-align {
         &-center,
@@ -144,11 +165,23 @@
       }
     }
 
+    &__content {
+      text-align: var(--c-banner-content-text-align);
+      max-width: 100%;
+    }
+
     &__title {
       line-height: var(--c-banner-title-line-height);
       font-size: var(--c-banner-title-font-size);
       color: var(--c-banner-title-color);
       text-align: var(--c-banner-title-text-align);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__button {
+      color: var(--c-banner-button-color);
+      margin-top: var(--c-banner-button-margin-top);
     }
   }
 </style>

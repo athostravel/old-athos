@@ -8,6 +8,7 @@ import Index from '@/pages/Index.vue'
 
 // Components
 import Banner from '@/pages/components/Banner.vue'
+import BannerOrion from '@/pages/components/BannerOrion.vue'
 import Button from '@/pages/components/Button.vue'
 import Icon from '@/pages/components/Icon.vue'
 
@@ -40,6 +41,11 @@ export default new Router({
                     path: 'banner',
                     name: 'Banner',
                     component: Banner
+                },
+                {
+                    path: 'banner-orion',
+                    name: 'BannerOrion',
+                    component: BannerOrion
                 },
                 {
                     path: 'button',
