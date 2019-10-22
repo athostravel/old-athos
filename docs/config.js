@@ -14,7 +14,13 @@ module.exports = {
             children: [
                 {
                     title: 'Banner',
-                    url: { name: 'Banner' }
+                    url: { name: 'Banner' },
+                    children: [
+                        {
+                            title: 'BannerOrion',
+                            url: { name: 'BannerOrion' }
+                        }
+                    ]
                 },
                 {
                     title: 'Button',
