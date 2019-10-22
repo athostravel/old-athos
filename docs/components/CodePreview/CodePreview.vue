@@ -8,7 +8,7 @@
                 Preview <span class="fas fa-expand-arrows-alt"></span>
             </button>
         </div>
-        <div v-if="preview" :class="{ 'is-expanded': isPreviewExpanded }" class="c-code-preview__component">
+        <div v-if="preview" :class="{ 'is-expanded': isPreviewExpanded }" :style="width && vertical && `max-width: ${widthToEm(width)}`" class="c-code-preview__component">
             <slot />
             <button v-show="isPreviewExpanded" class="c-code-preview__close" @click.prevent="closePreview()">
                 <span class="fas fa-compress-arrows-alt"></span>
@@ -46,6 +46,10 @@
             preview: {
                 type: Boolean,
                 default: true
+            },
+            width: {
+                type: String,
+                default: undefined
             }
         },
         data () {
@@ -56,6 +60,9 @@
             }
         },
         methods: {
+            widthToEm: function () {
+                return `${this.convertToEm(this.width)}rem`
+            },
             expandPreview () {
                 this.isPreviewExpanded = true
                 store.isNavOpen = false
@@ -92,6 +99,12 @@
             copied () {
                 this.isCopied = !this.isCopied
                 setTimeout(() => { this.isCopied = !this.isCopied }, 1500)
+            },
+            getRootElementFontSize (context) {
+                return parseFloat(window.getComputedStyle(context || document.documentElement).fontSize)
+            },
+            convertToEm (value) {
+                return parseFloat(value) / this.getRootElementFontSize()
             }
         }
     }
@@ -143,12 +156,13 @@
         top: 0;
         left: 0;
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
         border: 0;
         background-color: #fff;
         z-index: 10;
         padding: 0;
         overflow-y: auto;
+        max-width: 100% !important;
       }
     }
 
@@ -165,6 +179,7 @@
       justify-content: center;
       align-items: center;
       color: #fff;
+      z-index: 99999999;
     }
 
     &__code {
@@ -242,12 +257,12 @@
 
     &--vertical {
       @include breakpoint(l) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-wrap: wrap;
 
         #{$this} {
           &__legends {
-            grid-column: 1/-1;
+            width: 100%;
           }
 
           &__box {
@@ -255,10 +270,14 @@
             min-width: 1px;
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
+            flex-basis: 50%;
           }
 
           &__component {
             min-width: 1px;
+            flex-grow: 1;
+            flex-basis: 50%;
 
             &:not(.is-expanded) {
               border-bottom: 0.0625rem solid var(--color-secondary);
