@@ -58,6 +58,7 @@
     padding: 2rem 1.5rem;
     display: flex;
     background-color: #f7f7f7;
+    font-size: 1.125em;
     line-height: 1.8;
     margin-top: 2rem;
     margin-bottom: 2rem;
