@@ -1,8 +1,6 @@
 <template>
     <Layout>
-        <p style="height: 5000px;">
-            home
-        </p>
+        Installation
     </Layout>
 </template>
 

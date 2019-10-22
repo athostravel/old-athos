@@ -45,7 +45,7 @@
       top: 0;
       will-change: width;
 
-      @include breakpoint(l down) {
+      @include breakpoint(s down) {
         position: fixed;
         top: 0;
         left: 0;
