@@ -8,7 +8,15 @@
                 Preview <span class="fas fa-expand-arrows-alt"></span>
             </button>
         </div>
-        <div v-if="preview" :class="{ 'is-expanded': isPreviewExpanded }" :style="width && vertical && `max-width: ${widthToEm(width)}`" class="c-code-preview__component">
+        <div
+            v-if="preview"
+            :class="{ 'is-expanded': isPreviewExpanded }"
+            :style="{
+                maxWidth: width && vertical && widthToEm(width),
+                backgroundColor: bg
+            }"
+            class="c-code-preview__component"
+        >
             <slot />
             <button v-show="isPreviewExpanded" class="c-code-preview__close" @click.prevent="closePreview()">
                 <span class="fas fa-compress-arrows-alt"></span>
@@ -48,6 +56,10 @@
                 default: true
             },
             width: {
+                type: String,
+                default: undefined
+            },
+            bg: {
                 type: String,
                 default: undefined
             }
