@@ -18,7 +18,17 @@ module.exports = {
                 },
                 {
                     title: 'Button',
-                    url: { name: 'Button' }
+                    url: { name: 'Button' },
+                    children: [
+                        {
+                            title: 'Outlined',
+                            url: { name: 'Button', hash: '#outlined' }
+                        },
+                        {
+                            title: 'Casper',
+                            url: { name: 'Button', hash: '#casper' }
+                        }
+                    ]
                 },
                 {
                     title: 'Icon',
