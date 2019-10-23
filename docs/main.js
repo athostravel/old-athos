@@ -3,9 +3,9 @@ import VueMeta from 'vue-meta'
 import App from '@/App.vue'
 import router from '@/router'
 import globals from '@/mixins/globals'
-import PegasusComponents from '@lib/index.js'
+import Athos from '@lib/index.js'
 
-Vue.use(PegasusComponents)
+Vue.use(Athos)
 
 Vue.mixin({
     mixins: [globals]
