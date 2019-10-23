@@ -29,7 +29,8 @@
             return {
                 button: {
                     text: 'Leer más'
-                }
+                },
+                picture: {}
             }
         }
     }
