@@ -1,6 +1,6 @@
 import * as components from './components'
 
-const PegasusComponents = {
+const Athos = {
     install (Vue, options = {}) {
         for (const componentName in components) {
             const component = components[componentName]
@@ -10,8 +10,8 @@ const PegasusComponents = {
 }
 
 export * from './components'
-export default PegasusComponents
+export default Athos
 
 if (typeof window !== 'undefined' && window.Vue) {
-    window.Vue.use(PegasusComponents)
+    window.Vue.use(Athos)
 }
