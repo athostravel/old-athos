@@ -47,7 +47,7 @@
 <style lang="scss" scoped>
   .c-tabs {
     &__nav {
-      border-bottom: #{1px} solid var(--color-border);
+      border-bottom: #{em(1px)} solid var(--color-border);
       margin-bottom: 2em;
       display: grid;
       grid-auto-flow: column;
@@ -58,7 +58,7 @@
 
       &-item {
         padding: 1em;
-        border-bottom: #{1px} solid transparent;
+        border-bottom: #{em(1px)} solid transparent;
         transition: all 0.3s;
 
         &.is-active {
