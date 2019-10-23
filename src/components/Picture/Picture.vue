@@ -22,6 +22,7 @@
     import AtPictureSource from '../PictureSource/PictureSource.vue'
 
     export default {
+        name: 'AtPicture',
         components: {
             AtPictureSource
         },
