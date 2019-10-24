@@ -84,6 +84,7 @@
     --c-banner-overlay: transparent;
     --c-banner-picture-ratio-width: 13;
     --c-banner-picture-ratio-height: 17;
+    --c-banner-content-padding: #{em(32px)};
     --c-banner-content-text-align: center;
     --c-banner-title-line-height: 1.4;
     --c-banner-title-font-size: #{em(26px)};
@@ -128,7 +129,6 @@
 
     &__box {
       z-index: 3;
-      padding: #{em(32px)};
       min-width: #{em(1px)};
 
       &--v-align {
@@ -168,6 +168,7 @@
     &__content {
       text-align: var(--c-banner-content-text-align);
       max-width: 100%;
+      padding: var(--c-banner-content-padding);
     }
 
     &__title {
