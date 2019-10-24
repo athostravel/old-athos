@@ -1,9 +1,9 @@
 <template>
     <ul class="c-nav__list">
         <li v-for="item in items" :key="item.id" class="c-nav__item">
-            <RouterLink :to="item.url" class="c-nav__link" exact>
+            <component :is="item.url ? 'RouterLink' : 'div'" :to="item.url" class="c-nav__link" exact>
                 {{ item.title }}
-            </RouterLink>
+            </component>
             <NavigationList v-if="item.children" :items="item.children" />
         </li>
     </ul>
@@ -31,6 +31,7 @@
       #{$this}__list {
         margin-bottom: 0;
         padding-left: 1rem;
+        border-left: 1px solid var(--color-border);
       }
     }
 
@@ -49,14 +50,18 @@
       padding-bottom: 0.25rem;
       display: block;
 
-      &:active,
-      &:focus,
-      &:hover {
-        color: var(--color-primary);
-      }
+      @at-root {
+        a#{&} {
+          &:active,
+          &:focus,
+          &:hover {
+            color: var(--color-primary);
+          }
 
-      &.is-active {
-        color: var(--color-secondary);
+          &.is-active {
+            color: var(--color-secondary);
+          }
+        }
       }
     }
   }

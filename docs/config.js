@@ -13,9 +13,12 @@ module.exports = {
             group: 'UI Components',
             children: [
                 {
-                    title: 'Banner',
-                    url: { name: 'Banner' },
+                    title: 'Banners',
                     children: [
+                        {
+                            title: 'Banner',
+                            url: { name: 'Banner' }
+                        },
                         {
                             title: 'BannerOrion',
                             url: { name: 'BannerOrion' }
@@ -23,22 +26,32 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Button',
-                    url: { name: 'Button' },
+                    title: 'Buttons',
                     children: [
                         {
-                            title: 'Outlined',
-                            url: { name: 'Button', hash: '#outlined' }
-                        },
-                        {
-                            title: 'Casper',
-                            url: { name: 'Button', hash: '#casper' }
+                            title: 'Button',
+                            url: { name: 'Button' },
+                            children: [
+                                {
+                                    title: 'Outlined',
+                                    url: { name: 'Button', hash: '#outlined' }
+                                },
+                                {
+                                    title: 'Casper',
+                                    url: { name: 'Button', hash: '#casper' }
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    title: 'Icon',
-                    url: { name: 'Icon' }
+                    title: 'Icons',
+                    children: [
+                        {
+                            title: 'Icon',
+                            url: { name: 'Icon' }
+                        }
+                    ]
                 }
             ]
         }
