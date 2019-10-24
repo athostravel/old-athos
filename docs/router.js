@@ -11,6 +11,7 @@ import Banner from '@/pages/components/Banner.vue'
 import BannerOrion from '@/pages/components/BannerOrion.vue'
 import Button from '@/pages/components/Button.vue'
 import Icon from '@/pages/components/Icon.vue'
+import Input from '@/pages/components/Input.vue'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
                     path: 'icon',
                     name: 'Icon',
                     component: Icon
+                },
+                {
+                    path: 'input',
+                    name: 'Input',
+                    component: Input
                 }
             ]
         }
