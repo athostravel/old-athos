@@ -45,6 +45,15 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'Form Controls',
+                    children: [
+                        {
+                            title: 'Input',
+                            url: { name: 'Input' }
+                        }
+                    ]
+                },
+                {
                     title: 'Icons',
                     children: [
                         {
