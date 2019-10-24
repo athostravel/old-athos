@@ -9,8 +9,6 @@
                 valign="bottom"
                 align="center"
                 text="Button"
-                shadow
-                radius
             />
         </CodePreview>
     </Layout>
@@ -20,12 +18,16 @@
     import Layout from '@/layouts/Default.vue'
     import CodePreview from '@/components/CodePreview/CodePreview.vue'
     import Markdown from '@/components/Markdown/Markdown.vue'
+    import Tabs from '@/components/Tabs/Tabs.vue'
+    import Tab from '@/components/Tabs/Tab.vue'
 
     export default {
         components: {
             Layout,
             CodePreview,
-            Markdown
+            Markdown,
+            Tabs,
+            Tab
         }
     }
 </script>

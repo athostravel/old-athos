@@ -33,12 +33,12 @@
   line-height: 2;
 
   blockquote:not(:last-child),
-  h1:not(:last-child),
-  h2:not(:last-child),
-  h3:not(:last-child),
-  h4:not(:last-child),
-  h5:not(:last-child),
-  h6:not(:last-child),
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
   iframe:not(:last-child),
   img:not(:last-child),
   p:not(:last-child),
