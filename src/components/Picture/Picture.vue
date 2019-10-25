@@ -19,7 +19,7 @@
 </template>
 
 <script>
-    import AtPictureSource from '../PictureSource/PictureSource.vue'
+    import AtPictureSource from './PictureSource.vue'
 
     export default {
         name: 'AtPicture',
