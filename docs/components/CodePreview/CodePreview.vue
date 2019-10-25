@@ -18,7 +18,9 @@
                 }"
                 class="c-code-preview__component"
             >
-                <slot />
+                <div class="c-code-preview__elements" :class="{ 'c-code-preview__elements--horizontal': elements === 'horizontal' }">
+                    <slot />
+                </div>
                 <button v-show="isPreviewExpanded" class="c-code-preview__close" @click.prevent="closePreview()">
                     <span class="fas fa-compress-arrows-alt"></span>
                 </button>
@@ -64,6 +66,10 @@
             bg: {
                 type: String,
                 default: undefined
+            },
+            elements: {
+                type: String,
+                default: 'vertical'
             }
         },
         data () {
@@ -269,6 +275,34 @@
     &__code-snippet {
       margin-top: 0;
       margin-bottom: 0;
+    }
+
+    &__elements {
+      margin-bottom: -1rem;
+
+      & > * {
+        margin-bottom: 1rem;
+      }
+
+      & + & {
+        margin-top: 1rem;
+      }
+
+      &--horizontal {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-bottom: -1rem;
+
+        & > * {
+          margin-right: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        & + & {
+          margin-top: 1rem;
+        }
+      }
     }
 
     &--vertical {

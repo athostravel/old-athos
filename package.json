@@ -8,7 +8,7 @@
     "build": "rimraf dist && webpack --production --progress && rimraf dist/assets/css/**/*.js"
   },
   "author": "Javier Puche",
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/avoristravel/athos/issues"
   },

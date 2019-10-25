@@ -13,9 +13,12 @@ module.exports = {
             group: 'UI Components',
             children: [
                 {
-                    title: 'Banner',
-                    url: { name: 'Banner' },
+                    title: 'Banners',
                     children: [
+                        {
+                            title: 'Banner',
+                            url: { name: 'Banner' }
+                        },
                         {
                             title: 'BannerOrion',
                             url: { name: 'BannerOrion' }
@@ -27,23 +30,44 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Button',
-                    url: { name: 'Button' },
+                    title: 'Buttons',
                     children: [
                         {
-                            title: 'Outlined',
-                            url: { name: 'Button', hash: '#outlined' }
-                        },
-                        {
-                            title: 'Casper',
-                            url: { name: 'Button', hash: '#casper' }
+                            title: 'Button',
+                            url: { name: 'Button' },
+                            children: [
+                                {
+                                    title: 'Casper',
+                                    url: { name: 'Button', hash: '#casper' }
+                                },
+                                {
+                                    title: 'Outlined',
+                                    url: { name: 'Button', hash: '#outlined' }
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    title: 'Icon',
-                    url: { name: 'Icon' },
+                    title: 'Form Controls',
                     children: [
+                        {
+                            title: 'Input',
+                            url: { name: 'Input' }
+                        },
+                        {
+                            title: 'Select',
+                            url: { name: 'Select' }
+                        }
+                    ]
+                },
+                {
+                    title: 'Icons',
+                    children: [
+                        {
+                            title: 'Icon',
+                            url: { name: 'Icon' }
+                        },
                         {
                             title: 'IconList',
                             url: { name: 'IconList'}

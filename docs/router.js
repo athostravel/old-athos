@@ -16,6 +16,8 @@ import Icon from '@/pages/components/Icon.vue'
 import IconList from '@/pages/components/IconList.vue'
 import Price from '@/pages/components/Price.vue'
 import PriceButton from '@/pages/components/PriceButton.vue'
+import Input from '@/pages/components/Input.vue'
+import Select from '@/pages/components/Select.vue'
 
 Vue.use(Router)
 
@@ -86,6 +88,16 @@ export default new Router({
                     path: 'price-button',
                     name: 'PriceButton',
                     component: PriceButton
+                },
+                {
+                    path: 'input',
+                    name: 'Input',
+                    component: Input
+                },
+                {
+                    path: 'select',
+                    name: 'Select',
+                    component: Select
                 }
             ]
         }
