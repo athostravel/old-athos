@@ -33,12 +33,12 @@ module.exports = {
                             url: { name: 'Button' },
                             children: [
                                 {
-                                    title: 'Outlined',
-                                    url: { name: 'Button', hash: '#outlined' }
-                                },
-                                {
                                     title: 'Casper',
                                     url: { name: 'Button', hash: '#casper' }
+                                },
+                                {
+                                    title: 'Outlined',
+                                    url: { name: 'Button', hash: '#outlined' }
                                 }
                             ]
                         }
@@ -50,6 +50,10 @@ module.exports = {
                         {
                             title: 'Input',
                             url: { name: 'Input' }
+                        },
+                        {
+                            title: 'Select',
+                            url: { name: 'Select' }
                         }
                     ]
                 },
