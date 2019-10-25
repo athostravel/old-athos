@@ -1,8 +1,8 @@
 <template>
     <AtBanner
         tag="article"
-        class="c-banner--orion"
-        valign="bottom"
+        class="c-banner--sirius"
+        valign="center"
         align="center"
         text="Button"
         shadow
@@ -10,28 +10,26 @@
         overlay
         :picture="picture"
     >
-        <component :is="titleTag" v-if="title" class="c-banner__title">
-            {{ title }}
-        </component>
-
-        <AtButton
-            v-if="button"
-            v-bind="button"
-            class="c-banner__button"
-            size="small"
-            casper
+        <AtIconList />
+        <AtPriceButton
+            text="Desde"
+            before="600"
+            value="900"
         />
     </AtBanner>
 </template>
 
 <script>
     import AtBanner from '../Banner/Banner.vue'
-
+    import AtPriceButton from '../Price/PriceButton'
+    import AtIconList from '../Icon/IconList'
 
     export default {
-        name: 'AtBannerOrion',
+        name: 'AtBannerSirius',
         components: {
-            AtBanner
+            AtBanner,
+            AtPriceButton,
+            AtIconList
         },
         props: {
             title: {
@@ -44,11 +42,13 @@
             },
             button: {
                 type: Object,
-                default: () => {}
+                default: () => {
+                }
             },
             picture: {
                 type: Object,
-                default: () => {}
+                default: () => {
+                }
             }
         }
     }
@@ -58,7 +58,7 @@
   .c-banner {
     $this: &;
 
-    &--orion {
+    &--sirius {
       --c-banner-overlay: linear-gradient(0deg, #000 0%, transparent 50%);
 
       #{$this} {

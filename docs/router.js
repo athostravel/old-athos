@@ -9,8 +9,13 @@ import Index from '@/pages/Index.vue'
 // Components
 import Banner from '@/pages/components/Banner.vue'
 import BannerOrion from '@/pages/components/BannerOrion.vue'
+import BannerSirius from '@/pages/components/BannerSirius.vue'
 import Button from '@/pages/components/Button.vue'
+import Heading from '@/pages/components/Heading.vue'
 import Icon from '@/pages/components/Icon.vue'
+import IconList from '@/pages/components/IconList.vue'
+import Price from '@/pages/components/Price.vue'
+import PriceButton from '@/pages/components/PriceButton.vue'
 
 Vue.use(Router)
 
@@ -48,14 +53,39 @@ export default new Router({
                     component: BannerOrion
                 },
                 {
+                    path: 'banner-sirius',
+                    name: 'BannerSirius',
+                    component: BannerSirius
+                },
+                {
                     path: 'button',
                     name: 'Button',
                     component: Button
                 },
                 {
+                    path: 'heading',
+                    name: 'Heading',
+                    component: Heading
+                },
+                {
                     path: 'icon',
                     name: 'Icon',
                     component: Icon
+                },
+                {
+                    path: 'icon-list',
+                    name: 'IconList',
+                    component: IconList
+                },
+                {
+                    path: 'price',
+                    name: 'Price',
+                    component: Price
+                },
+                {
+                    path: 'price-button',
+                    name: 'PriceButton',
+                    component: PriceButton
                 }
             ]
         }
