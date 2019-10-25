@@ -27,7 +27,6 @@
 <script>
     import AtBanner from '../Banner/Banner.vue'
 
-
     export default {
         name: 'AtBannerOrion',
         components: {
