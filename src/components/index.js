@@ -14,7 +14,6 @@ export {
     Icon,
     Price,
     Heading,
-    Icon,
     Input,
     Option,
     Picture,
