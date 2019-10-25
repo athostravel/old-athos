@@ -6,39 +6,57 @@
             'c-input--has-icon-left': icon && iconAlign === 'left',
             'c-input--has-icon-detail': iconDetail,
             'c-input--has-label': label,
-            'c-input--disabled': disabled
+            'c-input--is-disabled': disabled,
+            'c-input--tiny' : size && size === 'tiny',
+            'c-input--small' : size && size === 'small',
+            'c-input--medium' : size && size === 'medium',
+            'c-input--large' : size && size === 'large',
         }"
     >
-        <input
-            :id="id"
-            class="c-input__element"
-            :type="type"
-            :name="name"
-            :placeholder="placeholder"
-            :readonly="readonly"
-            :disabled="disabled"
-            :value="value"
-        >
+        <div class="c-input__inner">
+            <slot>
+                <input
+                    :id="idElement"
+                    class="c-input__element"
+                    :type="type"
+                    :name="name"
+                    :placeholder="placeholder"
+                    :readonly="readonly"
+                    :disabled="disabled"
+                    :value="value"
+                    :required="required"
+                    :autocomplete="autocomplete"
+                    :checked="checked"
+                    :max="max"
+                    :min="min"
+                    :multiple="multiple"
+                >
+            </slot>
 
-        <label v-if="label" class="c-input__label" :for="id">
-            <span class="c-input__label-text">
-                {{ label }}
-            </span>
-        </label>
+            <label v-if="label" class="c-input__label" :for="idElement">
+                <span class="c-input__label-text">
+                    {{ label }}
+                </span>
+            </label>
 
-        <AtIcon
-            v-if="icon"
-            class="c-input__icon"
-            :icon="icon"
-        />
+            <AtIcon
+                v-if="icon"
+                class="c-input__icon"
+                :icon="icon"
+            />
+        </div>
     </div>
 </template>
 
 <script>
     import formControl from '../../mixins/formControl'
+    import AtIcon from '../Icon/Icon.vue'
 
     export default {
         name: 'AtInput',
+        components: {
+            AtIcon
+        },
         mixins: [formControl]
     }
 </script>
@@ -87,14 +105,18 @@
     --c-input-label-text-transform: uppercase;
 
     // Icon
-    --c-input-icon-background-color: var(--c-input-background-color);
+    --c-input-icon-background-color: transparent;
     --c-input-icon-color: var(--color-primary);
     --c-input-icon-detail: none;
     --c-input-icon-detail-color: var(--c-input-border-color);
 
-    display: grid;
-    grid-template-columns: 1fr;
-    position: relative;
+    font-size: var(--c-input-size);
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+    }
 
     &__element {
       font-size: var(--c-input-font-size);
@@ -163,7 +185,6 @@
       border-bottom-right-radius: var(--c-input-radius);
       background-color: var(--c-input-icon-background-color);
       color: var(--c-input-icon-color);
-      margin: var(--c-input-border-width);
       min-width: var(--c-input-min-height);
       grid-row: 1/3;
       grid-column: 2/3;
@@ -194,7 +215,9 @@
     }
 
     &--has-icon-left {
-      grid-template-columns: auto 1fr;
+      #{$this}__inner {
+        grid-template-columns: auto 1fr;
+      }
 
       #{$this}__element {
         padding-right: var(--c-input-padding-right);
@@ -207,7 +230,7 @@
 
       &:not(#{$this}--has-icon-detail) {
         #{$this}__label {
-          padding-left: 0;
+          --c-input-label-padding-left: 0;
         }
       }
 
@@ -257,6 +280,22 @@
       #{$this}__label {
         cursor: not-allowed;
       }
+    }
+
+    &--tiny {
+      --c-input-size: 0.6668em;
+    }
+
+    &--small {
+      --c-input-size: 0.8336em;
+    }
+
+    &--medium {
+      --c-input-size: 1.1668em;
+    }
+
+    &--large {
+      --c-input-size: 1.3334em;
     }
   }
 </style>

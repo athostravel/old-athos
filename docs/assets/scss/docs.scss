@@ -159,19 +159,3 @@
     background-color: transparent;
   }
 }
-
-.elements {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-bottom: -1rem;
-
-  & > * {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  & + & {
-    margin-top: 1rem;
-  }
-}
