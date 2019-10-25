@@ -1,4 +1,16 @@
+import stringToSlug from '../utils/stringToSlug'
+
 export default {
+    data () {
+        return {
+            idElement: this.setId()
+        }
+    },
+    methods: {
+        setId () {
+            return !this.id && this.label ? stringToSlug(this.label) : this.id
+        }
+    },
     props: {
         name: {
             type: String,
@@ -15,14 +27,6 @@ export default {
         placeholder: {
             type: String,
             default: undefined
-        },
-        readonly: {
-            type: Boolean,
-            default: false
-        },
-        disabled: {
-            type: Boolean,
-            default: false
         },
         label: {
             type: String,
@@ -43,6 +47,42 @@ export default {
         value: {
             type: String,
             default: undefined
+        },
+        size: {
+            type: String,
+            default: undefined
+        },
+        max: {
+            type: String,
+            default: undefined
+        },
+        min: {
+            type: String,
+            default: undefined
+        },
+        readonly: {
+            type: Boolean,
+            default: false
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        required: {
+            type: Boolean,
+            default: false
+        },
+        multiple: {
+            type: Boolean,
+            default: false
+        },
+        checked: {
+            type: Boolean,
+            default: false
+        },
+        autocomplete: {
+            type: Boolean,
+            default: false
         }
     }
 }
