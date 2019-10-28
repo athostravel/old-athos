@@ -13,6 +13,7 @@ import Button from '@/pages/components/Button.vue'
 import Icon from '@/pages/components/Icon.vue'
 import Input from '@/pages/components/Input.vue'
 import Select from '@/pages/components/Select.vue'
+import Tip from '@/pages/components/Tip.vue'
 
 Vue.use(Router)
 
@@ -68,6 +69,11 @@ export default new Router({
                     path: 'select',
                     name: 'Select',
                     component: Select
+                },
+                {
+                    path: 'tip',
+                    name: 'Tip',
+                    component: Tip
                 }
             ]
         }

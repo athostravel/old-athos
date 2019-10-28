@@ -65,6 +65,15 @@ module.exports = {
                             url: { name: 'Icon' }
                         }
                     ]
+                },
+                {
+                    title: 'Tips',
+                    children: [
+                        {
+                            title: 'Tip',
+                            url: { name: 'Tip' }
+                        }
+                    ]
                 }
             ]
         }
