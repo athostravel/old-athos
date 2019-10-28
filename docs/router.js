@@ -5,6 +5,7 @@ import EmptyRoute from '@/pages/EmptyRoute.vue'
 
 // Home
 import Index from '@/pages/Index.vue'
+import NotFound404 from '@/pages/NotFound404.vue'
 
 // Components
 import Banner from '@/pages/components/Banner.vue'
@@ -13,12 +14,16 @@ import Button from '@/pages/components/Button.vue'
 import Icon from '@/pages/components/Icon.vue'
 import Input from '@/pages/components/Input.vue'
 import Select from '@/pages/components/Select.vue'
+import Textarea from '@/pages/components/Textarea.vue'
 import Tip from '@/pages/components/Tip.vue'
 
 Vue.use(Router)
 
+const publicPath = (process.env && process.env.publicPath) || '/'
+
 export default new Router({
-    mode: 'history',
+    base: publicPath,
+    mode: 'hash',
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-active-exact',
     scrollBehavior (to, from, savedPosition) {
@@ -31,6 +36,10 @@ export default new Router({
         }
     },
     routes: [
+        {
+            path: '*',
+            component: NotFound404
+        },
         {
             path: '/',
             name: 'Home',
@@ -69,6 +78,11 @@ export default new Router({
                     path: 'select',
                     name: 'Select',
                     component: Select
+                },
+                {
+                    path: 'textarea',
+                    name: 'Textarea',
+                    component: Textarea
                 },
                 {
                     path: 'tip',

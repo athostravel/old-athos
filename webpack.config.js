@@ -5,9 +5,10 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const isProduction = process.argv.indexOf('--production') >= 0
+const webpackConfig = (env) => {
+    const isProduction = process.argv.indexOf('--production') >= 0
+    const publicPath = (env && env.publicPath) || '/'
 
-const webpackConfig = () => {
     let options = {
         stats: 'minimal',
         entry: {
@@ -18,7 +19,7 @@ const webpackConfig = () => {
         output: {
             path: resolve('./dist'),
             filename: 'js/[name].js',
-            publicPath: '/'
+            publicPath: publicPath
         },
         resolve: {
             extensions: ['.js', '.json', '.vue', '.scss'],
@@ -101,7 +102,7 @@ const webpackConfig = () => {
                             options: {
                                 name: '[name].[ext]',
                                 outputPath: 'images',
-                                publicPath: '/images'
+                                publicPath: `${publicPath}images`
                             }
                         },
                         {
@@ -121,7 +122,7 @@ const webpackConfig = () => {
                             options: {
                                 name: '[name].[ext]',
                                 outputPath: 'fonts',
-                                publicPath: '/fonts'
+                                publicPath: `${publicPath}fonts`
                             }
                         }
                     ]
@@ -174,4 +175,6 @@ const webpackConfig = () => {
     return options
 }
 
-module.exports = webpackConfig
+module.exports = env => {
+    return webpackConfig(env)
+}

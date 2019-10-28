@@ -5,6 +5,7 @@ import Input from './Input'
 import Option from './Option'
 import Picture from './Picture'
 import Select from './Select'
+import Textarea from './Textarea'
 import Tip from './Tip'
 
 export {
@@ -15,5 +16,6 @@ export {
     Option,
     Picture,
     Select,
+    Textarea
     Tip
 }

@@ -54,6 +54,10 @@ module.exports = {
                         {
                             title: 'Select',
                             url: { name: 'Select' }
+                        },
+                        {
+                            title: 'Textarea',
+                            url: { name: 'Textarea' }
                         }
                     ]
                 },
