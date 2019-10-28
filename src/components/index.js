@@ -16,6 +16,6 @@ export {
     Option,
     Picture,
     Select,
-    Textarea
+    Textarea,
     Tip
 }
