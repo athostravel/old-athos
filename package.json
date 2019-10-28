@@ -5,10 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "rimraf dist && webpack-dev-server",
-    "build": "rimraf dist && webpack --production --progress && rimraf dist/assets/css/**/*.js"
+    "build": "rimraf dist && webpack --production --progress && rimraf dist/assets/css/**/*.js",
+    "pages": "rimraf dist && webpack --env.publicPath=/athos/ --production --progress && rimraf dist/assets/css/**/*.js"
   },
   "author": "Javier Puche",
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/avoristravel/athos/issues"
   },

@@ -1,9 +1,9 @@
-import PictureSource from './PictureSource.vue'
+import Select from './Select.vue'
 import { use, registerComponent } from '../../utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, PictureSource)
+        registerComponent(Vue, Select)
     }
 }
 
