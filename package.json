@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "rimraf dist && webpack-dev-server",
-    "build": "rimraf dist && webpack --production --progress && rimraf dist/assets/css/**/*.js"
+    "build": "rimraf dist && webpack --production --progress && rimraf dist/assets/css/**/*.js",
+    "pages": "rimraf dist && webpack --production --progress --env.publicPath=athos/ && rimraf dist/assets/css/**/*.js"
   },
   "author": "Javier Puche",
   "license": "GPL-3.0-or-later",
