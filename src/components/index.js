@@ -5,6 +5,7 @@ import Input from './Input'
 import Option from './Option'
 import Picture from './Picture'
 import Select from './Select'
+import Textarea from './Textarea'
 
 export {
     Banner,
@@ -13,5 +14,6 @@ export {
     Input,
     Option,
     Picture,
-    Select
+    Select,
+    Textarea
 }
