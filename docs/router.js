@@ -22,7 +22,7 @@ const publicPath = (process.env && process.env.publicPath) || '/'
 
 export default new Router({
     base: publicPath,
-    mode: 'history',
+    mode: 'hash',
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-active-exact',
     scrollBehavior (to, from, savedPosition) {
@@ -35,7 +35,10 @@ export default new Router({
         }
     },
     routes: [
-        { path: '*', component: NotFound404 },
+        {
+            path: '*',
+            component: NotFound404
+        },
         {
             path: '/',
             name: 'Home',
