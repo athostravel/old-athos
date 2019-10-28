@@ -17,7 +17,10 @@ import Textarea from '@/pages/components/Textarea.vue'
 
 Vue.use(Router)
 
+const publicPath = (process.env && process.env.publicPath) || '/'
+
 export default new Router({
+    base: publicPath,
     mode: 'history',
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-active-exact',
