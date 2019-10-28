@@ -5,6 +5,7 @@ import EmptyRoute from '@/pages/EmptyRoute.vue'
 
 // Home
 import Index from '@/pages/Index.vue'
+import NotFound404 from '@/pages/NotFound404.vue'
 
 // Components
 import Banner from '@/pages/components/Banner.vue'
@@ -32,6 +33,7 @@ export default new Router({
         }
     },
     routes: [
+        { path: '*', component: NotFound404 },
         {
             path: '/',
             name: 'Home',
