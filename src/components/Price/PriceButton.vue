@@ -14,10 +14,7 @@
             />
         </div>
         <div class="c-price-button__button">
-            <Button
-                :icon="buttonIcon"
-                :text="buttonText"
-            />
+            <Button v-bind="button"/>
         </div>
     </component>
 </template>
@@ -83,13 +80,9 @@
                 type: Boolean,
                 default: false
             },
-            buttonIcon: {
-                type: [String, Boolean],
-                default: undefined
-            },
-            buttonText: {
-                type: String,
-                default: undefined
+            button: {
+                type: Object,
+                default: () => {}
             }
         }
     }

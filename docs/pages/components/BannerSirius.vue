@@ -28,10 +28,9 @@
         data () {
             return {
                 button: {
-                    text: 'Leer más'
-                },
-                picture: {
-
+                    text: 'Leer más',
+                    icon: 'arrow-down',
+                    iconAlign: 'right'
                 }
             }
         }

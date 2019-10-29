@@ -10,7 +10,7 @@
                 text="desde"
                 before="600"
                 value="400"
-                buttonIcon="arrow-down"
+                :button="button"
             >
                 <AtIcon icon="phone"/>
             </AtPriceButton >
@@ -28,6 +28,15 @@
             Layout,
             CodePreview,
             Markdown
+        },
+        data () {
+            return {
+                button: {
+                    icon: 'arrow-down',
+                    text: 'button',
+                    iconAlign: 'right'
+                }
+            }
         }
     }
 </script>

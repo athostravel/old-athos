@@ -15,6 +15,7 @@
             text="Desde"
             before="600"
             value="900"
+            :button="button"
         />
     </AtBanner>
 </template>
@@ -42,8 +43,7 @@
             },
             button: {
                 type: Object,
-                default: () => {
-                }
+                default: () => {}
             },
             picture: {
                 type: Object,
