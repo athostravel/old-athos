@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const StylelintPlugin = require('stylelint-webpack-plugin')
 
 const webpackConfig = (env) => {
     const isProduction = process.argv.indexOf('--production') >= 0
@@ -32,6 +33,16 @@ const webpackConfig = (env) => {
         },
         module: {
             rules: [
+                {
+                    enforce: 'pre',
+                    test: /\.(js|vue)$/,
+                    exclude: [
+                        /node_modules/,
+                        resolve('./docs/assets/js/fontawesome.js'),
+                        resolve('./docs/assets/js/icons.js')
+                    ],
+                    loader: 'eslint-loader'
+                },
                 {
                     test: /\.vue$/,
                     loader: 'vue-loader',
@@ -137,7 +148,10 @@ const webpackConfig = (env) => {
                 template: './docs/index.html',
                 filename: 'index.html'
             }),
-            new VueLoaderPlugin()
+            new VueLoaderPlugin(),
+            new StylelintPlugin({
+                files: ['**/*.s?(a|c)ss', '**/*.vue']
+            })
         ],
         performance: {
             hints: false

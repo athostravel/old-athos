@@ -4,13 +4,13 @@
         :class="{'c-price--inline' : inline}"
     >
         <div class="c-price__text">
-            {{text}}
+            {{ text }}
         </div>
         <div class="c-price__before">
-            {{before}}{{currency}}
+            {{ before }}{{ currency }}
         </div>
         <div class="c-price__value">
-            {{value}}{{currency}}
+            {{ value }}{{ currency }}
         </div>
     </div>
 </template>

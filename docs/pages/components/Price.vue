@@ -5,7 +5,7 @@
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtPrice text="desde" before="600" value="400"/>
+            <AtPrice text="desde" before="600" value="400" />
         </CodePreview>
     </Layout>
 </template>

@@ -1,10 +1,10 @@
 <template>
     <div class="c-icon-list" :class="{'c-icon-list--vertical' : vertical}">
         <Icon
-            class="c-icon-list__icon"
             v-for="icon in icons"
-            :icon="icon"
             :key="icon.id"
+            class="c-icon-list__icon"
+            :icon="icon"
         />
     </div>
 </template>

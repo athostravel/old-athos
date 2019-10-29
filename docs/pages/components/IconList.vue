@@ -5,7 +5,7 @@
         </Markdown>
 
         <CodePreview :vertical="true">
-            <AtIconList/>
+            <AtIconList />
         </CodePreview>
     </Layout>
 </template>

@@ -32,6 +32,16 @@
   color: var(--color-text);
   line-height: 2;
 
+  ol {
+    counter-reset: orderList;
+  }
+
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
   blockquote:not(:last-child),
   h1,
   h2,
@@ -107,10 +117,6 @@
     font-weight: 500;
   }
 
-  ol {
-    counter-reset: orderList;
-  }
-
   ol li::before {
     counter-increment: orderList;
     content: counter(orderList) ".";
@@ -128,12 +134,6 @@
     &:hover {
       text-decoration: underline;
     }
-  }
-
-  table {
-    width: 100%;
-    overflow-x: auto;
-    display: block;
   }
 
   th {
