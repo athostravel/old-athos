@@ -63,7 +63,8 @@
     --c-picture-overlay: transparent;
 
     overflow: hidden;
-      position: relative;
+    position: relative;
+
 
     &::before {
       display: block;
