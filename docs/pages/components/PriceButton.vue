@@ -10,8 +10,8 @@
                 :price="price"
                 :tag="tag"
             >
-                <AtIcon icon="phone"/>
-            </AtPriceButton >
+                <AtIcon icon="phone" />
+            </AtPriceButton>
         </CodePreview>
     </Layout>
 </template>

@@ -74,7 +74,7 @@ module.exports = {
                         },
                         {
                             title: 'IconList',
-                            url: { name: 'IconList'}
+                            url: { name: 'IconList' }
                         }
                     ]
                 },

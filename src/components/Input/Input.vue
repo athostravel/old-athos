@@ -64,7 +64,7 @@
 <style lang="scss">
   @mixin c-input-focus($this) {
     &:active:not(:disabled):not(&--is-disabled):not(:read-only),
-    &:focus:not(:disabled):not(&--is-disabled):not(:read-only) {
+       &:focus:not(:disabled):not(&--is-disabled):not(:read-only) {
       @content;
     }
   }

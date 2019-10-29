@@ -33,6 +33,16 @@ const webpackConfig = (env) => {
         module: {
             rules: [
                 {
+                    enforce: 'pre',
+                    test: /\.(js|vue)$/,
+                    exclude: [
+                        /node_modules/,
+                        resolve('./docs/assets/js/fontawesome.js'),
+                        resolve('./docs/assets/js/icons.js')
+                    ],
+                    loader: 'eslint-loader'
+                },
+                {
                     test: /\.vue$/,
                     loader: 'vue-loader',
                     include: [resolve('./docs'), resolve('./src')]
