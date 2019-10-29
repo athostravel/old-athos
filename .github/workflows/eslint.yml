@@ -20,3 +20,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         job-name: eslint
+        lint-all: true
+        custom-glob: './**/*.js,vue'
