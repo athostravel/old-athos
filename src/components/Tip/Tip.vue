@@ -3,29 +3,20 @@
         :is="tag"
         class="c-tip"
         :class="{
-            'c-tip--has-img': img !== undefined,
             'c-tip--has-icon': icon !== undefined,
-            'c-tip--reverse': reverse !== undefined
+            'c-tip--icon-right': iconAlign === 'right',
+            'c-tip--icon-bottom': iconAlign === 'bottom',
+            'c-tip--icon-top': iconAlign === 'top'
         }"
     >
-        <div class="c-tip__media">
-            <AtIcon
-                v-if="icon"
-                class="c-tip__icon"
-                :icon="icon"
-            />
-            <AtPicture
-                v-if="img"
-                class="c-tip__picture"
-                v-bind="picture"
-                src="https://source.unsplash.com/random/40x40"
-                alt="text"
-                title="title"
-            />
-        </div>
+        <AtIcon
+            v-if="icon"
+            class="c-tip__icon"
+            :icon="icon"
+        />
         <div class="c-tip__info">
-            <span class="c-tip__title">{{ title }}</span>
-            <span class="c-tip__text">{{ text }}</span>
+            <div class="c-tip__title">{{ title }}</div>
+            <div class="c-tip__text">{{ text }}</div>
         </div>
     </component>
 </template>
@@ -42,12 +33,8 @@
                 type: [String, Boolean],
                 default: undefined
             },
-            reverse: {
-                type: [String, Boolean],
-                default: undefined
-            },
-            img: {
-                type: [String, Boolean],
+            iconAlign: {
+                type: [String],
                 default: undefined
             },
             title: {
@@ -63,53 +50,68 @@
 </script>
 
 <style lang="scss">
-  .c-tip {
-    $this: &;
+    .c-tip {
+        --c-tip-icon-color: var(--color-secondary);
+        --c-tip-icon-font-size: var(--c-input-icon-font-size, 1.8em);
+        --c-tip-title-color: var(--color-primary);
+        --c-tip-title-font-size: var(--font-size-m);
+        --c-tip-text-color: var(--color-primary);
+        --c-tip-text-font-size: var(--font-size-xs);
 
-    display: inline-flex;
-    align-items: center;
+        $this: &;
 
-    &--reverse {
-      flex-direction: row-reverse;
+        display: flex;
+        align-items: flex-start;
 
-      #{$this}__media {
-        margin-right: 0;
-        margin-left: 1.2rem;
-      }
+        &--icon {
+            &-right {
+            flex-direction: row-reverse;
+
+                #{$this}__icon {
+                    margin-right: 0;
+                    margin-left: 1em;
+                }
+            }
+
+            &-top {
+                flex-direction: column;
+
+                #{$this}__icon {
+                    margin-bottom: .4em;
+                    margin-right: 0;
+                }
+            }
+
+            &-bottom {
+            flex-direction: column-reverse;
+
+                #{$this}__icon {
+                    margin-right: 0;
+                    margin-top: .4em;
+                }
+            }
+        }
+
+        &__icon {
+            font-size: var(--c-tip-icon-font-size);
+            color: var(--c-tip-icon-color);
+            margin-right: 1em;
+        }
+
+        &__info {
+            width: 100%;
+        }
+
+        &__title {
+            color: var(--c-tip-title-color);
+            font-size: var(--c-tip-title-font-size);
+            font-weight: 700;
+            margin-bottom: .5em;
+        }
+
+        &__text {
+            color: var(--c-tip-text-color);
+            font-size: var(--c-tip-text-font-size);
+        }
     }
-
-    &__media {
-      align-items: center;
-      display: flex;
-      flex-shrink: 0;
-      justify-content: center;
-      margin-right: 1.2rem;
-      min-height: 40px;
-      min-width: 40px;
-      position: relative;
-    }
-
-    &__icon {
-      font-size: var(--c-input-icon-font-size, 1.8em);
-      color: var(--color-secondary);
-    }
-
-    &__info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__title {
-      color: var(--color-primary);
-      font-size: var(--font-size-m);
-      line-height: var(--line-height-xl);
-      font-weight: 700;
-    }
-
-    &__text {
-      color: var(--color-primary);
-      font-size: var(--font-size-xs);
-      line-height: var(--line-height-m);
-    }
-  }
 </style>
