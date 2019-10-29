@@ -1,11 +1,10 @@
-import Price from './Price'
-import PriceButton from './PriceButton'
+import Tetris from './Tetris'
+
 import { use, registerComponent } from '../../utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, Price)
-        registerComponent(Vue, PriceButton)
+        registerComponent(Vue, Tetris)
     }
 }
 

@@ -20,6 +20,7 @@ import PriceButton from '@/pages/components/PriceButton.vue'
 import Input from '@/pages/components/Input.vue'
 import Select from '@/pages/components/Select.vue'
 import Textarea from '@/pages/components/Textarea.vue'
+import Tetris from '@/pages/components/Tetris'
 
 Vue.use(Router)
 
@@ -112,6 +113,11 @@ export default new Router({
                     path: 'textarea',
                     name: 'Textarea',
                     component: Textarea
+                },
+                {
+                    path: 'tetris',
+                    name: 'Tetris',
+                    component: Tetris
                 }
             ]
         }

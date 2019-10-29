@@ -74,7 +74,7 @@ module.exports = {
                         },
                         {
                             title: 'IconList',
-                            url: { name: 'IconList'}
+                            url: { name: 'IconList' }
                         }
                     ]
                 },
@@ -91,6 +91,15 @@ module.exports = {
                 {
                     title: 'Heading',
                     url: { name: 'Heading' }
+                },
+                {
+                    title: 'Layouts',
+                    children: [
+                        {
+                            title: 'Tetris',
+                            url: { name: 'Tetris' }
+                        }
+                    ]
                 }
             ]
         }
