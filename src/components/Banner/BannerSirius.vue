@@ -12,9 +12,7 @@
     >
         <AtIconList />
         <AtPriceButton
-            text="Desde"
-            before="600"
-            value="900"
+            :price="price"
             :button="button"
         />
     </AtBanner>
@@ -47,8 +45,11 @@
             },
             picture: {
                 type: Object,
-                default: () => {
-                }
+                default: () => {}
+            },
+            price: {
+                type: Object,
+                default: () => {}
             }
         }
     }

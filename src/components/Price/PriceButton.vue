@@ -7,14 +7,10 @@
         }"
     >
         <div class="c-price-button__price">
-            <Price
-                :text="text"
-                :before="before"
-                :value="value"
-            />
+            <Price v-bind="price" />
         </div>
         <div class="c-price-button__button">
-            <Button v-bind="button"/>
+            <Button v-bind="button" />
         </div>
     </component>
 </template>
@@ -81,6 +77,10 @@
                 default: false
             },
             button: {
+                type: Object,
+                default: () => {}
+            },
+            price: {
                 type: Object,
                 default: () => {}
             }

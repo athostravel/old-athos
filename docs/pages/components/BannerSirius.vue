@@ -9,6 +9,7 @@
                 title="¿Qué visitar en Vietnam en una semana?"
                 :picture="picture"
                 :button="button"
+                :price="price"
             />
         </CodePreview>
     </Layout>
@@ -31,6 +32,11 @@
                     text: 'Leer más',
                     icon: 'arrow-down',
                     iconAlign: 'right'
+                },
+                price: {
+                    before: '600',
+                    text: 'desde',
+                    value: '499'
                 }
             }
         }

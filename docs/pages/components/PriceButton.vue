@@ -6,11 +6,9 @@
 
         <CodePreview width="435" vertical>
             <AtPriceButton
-                tag="a"
-                text="desde"
-                before="600"
-                value="400"
                 :button="button"
+                :price="price"
+                :tag="tag"
             >
                 <AtIcon icon="phone"/>
             </AtPriceButton >
@@ -35,7 +33,13 @@
                     icon: 'arrow-down',
                     text: 'button',
                     iconAlign: 'right'
-                }
+                },
+                price: {
+                    before: '600',
+                    text: 'desde',
+                    value: '499'
+                },
+                tag: 'div'
             }
         }
     }
