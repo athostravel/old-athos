@@ -4,7 +4,7 @@
             # Tetris Layout
         </Markdown>
 
-        <CodePreview width="435" >
+        <CodePreview width="435">
             <AtLayoutTetris>
                 <AtBannerSirius
                     title="¿Qué visitar en Vietnam en una semana?"
