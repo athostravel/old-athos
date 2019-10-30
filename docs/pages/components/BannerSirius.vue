@@ -12,7 +12,6 @@
                 :titleText="titleText"
                 :metaText="metaText"
             />
-
         </CodePreview>
     </Layout>
 </template>
