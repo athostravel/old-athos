@@ -8,17 +8,9 @@
         overlay
         :picture="picture"
     >
-        <component :is="headingTag" class="c-banner__heading">
-            <component :is="metaTag" class="c-banner__meta">
-                <span class="c-banner__meta-txt">
-                    {{ meta }}
-                </span>
-            </component>
-            <component :is="titleTag" class="c-banner__title">
-                <span class="c-banner__title-txt">
-                    {{ title }}
-                </span>
-            </component>
+        <component :is="textTag" class="c-banner__text">
+            <AtText v-bind="metaText" class="c-banner__meta" />
+            <AtText v-bind="titleText" class="c-banner__title" />
         </component>
         <AtIconList
             :icons="icons"
@@ -36,34 +28,28 @@
     import AtBanner from '../Banner/Banner.vue'
     import AtPriceButton from '../Price/PriceButton'
     import AtIconList from '../Icon/IconList'
+    import AtText from '../Text/Text'
 
     export default {
         name: 'AtBannerSirius',
         components: {
             AtBanner,
             AtPriceButton,
-            AtIconList
+            AtIconList,
+            AtText
         },
         props: {
-            headingTag: {
+            textTag: {
                 type: String,
                 default: 'div'
             },
-            title: {
-                type: String,
-                default: 'Punta Cana / Playa Bávaro'
+            titleText: {
+                type: Object,
+                default: () => {}
             },
-            titleTag: {
-                type: String,
-                default: 'h3'
-            },
-            meta: {
-                type: String,
-                default: '9 dias y 7 noches'
-            },
-            metaTag: {
-                type: String,
-                default: 'div'
+            metaText: {
+                type: Object,
+                default: () => {}
             },
             button: {
                 type: Object,
@@ -106,12 +92,12 @@
           display: grid;
           grid-template-rows: repeat(3, auto);
           padding: var(--c-banner-content-padding);
-          grid-template-areas: "icons" "heading" "price";
+          grid-template-areas: "icons" "text" "price";
           height: 100%;
         }
 
-        &__heading {
-          grid-area: heading;
+        &__text {
+          grid-area: text;
           justify-self: start;
           text-align: left;
         }
@@ -134,24 +120,20 @@
         }
 
         &__title {
-          background: var(--c-banner-title-background);
-          padding: var(--c-banner-title-padding);
+          --c-text-font-size: var(--c-banner-title-font-size);
+          --c-text-background: var(--c-banner-title-background);
+          --c-text-padding: var(--c-banner-title-padding);
+          --c-text-color: var(--c-banner-title-color);
 
-          &-txt {
-            color: var(--c-banner-title-color);
-            font-size: var(--c-banner-title-font-size);
-          }
         }
 
         &__meta {
-          background: var(--c-banner-meta-background);
-          padding: var(--c-banner-meta-padding);
-          display: inline-flex;
+          --c-text-font-size: var(--c-banner-meta-font-size);
+          --c-text-background: var(--c-banner-meta-background);
+          --c-text-padding: var(--c-banner-meta-padding);
+          --c-text-color: var(--c-banner-meta-color);
 
-          &-txt {
-            color: var(--c-banner-meta-color);
-            font-size: var(--c-banner-meta-font-size);
-          }
+          display: inline-block;
         }
       }
     }

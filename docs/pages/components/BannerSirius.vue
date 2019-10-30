@@ -9,6 +9,8 @@
                 :picture="picture"
                 :button="button"
                 :price="price"
+                :titleText="titleText"
+                :metaText="metaText"
             />
 
         </CodePreview>
@@ -37,6 +39,15 @@
                     before: '600',
                     text: 'desde',
                     value: '499'
+                },
+                titleText: {
+                    text: 'Riviera Maya',
+                    background: true,
+                    tag: 'h3'
+                },
+                metaText: {
+                    text: '9 días y 7 noches',
+                    background: true
                 }
             }
         }

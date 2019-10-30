@@ -2,7 +2,8 @@
     <component
         :is="tag"
         :class="{'c-text--has-bg': background}"
-        class="c-text">
+        class="c-text"
+    >
         <span class="c-text__text">
             {{ text }}
         </span>
@@ -16,11 +17,16 @@
     --c-text-color: currentColor;
     --c-text-font-size: 1em;
     --c-text-margin: 0;
+    --c-text-line-height: 1.4;
+    --c-text-font-weight: 400;
 
     color: var(--c-text-color);
     margin: var(--c-text-margin);
+
     &__text {
+      font-weight: var(--c-text-font-weight);
       font-size: var(--c-text-font-size);
+      line-height: var(--c-text-line-height);
     }
 
     &--has-bg {
