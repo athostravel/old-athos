@@ -1,12 +1,11 @@
 <template>
     <Layout>
         <Markdown>
-            # Banner Orion
+            # Banner Sirius
         </Markdown>
 
         <CodePreview width="435" vertical>
             <AtBannerSirius
-                title="¿Qué visitar en Vietnam en una semana?"
                 :picture="picture"
                 :button="button"
                 :price="price"
