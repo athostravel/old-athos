@@ -100,6 +100,15 @@ module.exports = {
                             url: { name: 'Tetris' }
                         }
                     ]
+                },
+                {
+                    title: 'Text',
+                    children: [
+                        {
+                            title: 'Text',
+                            url: { name: 'Text' }
+                        }
+                    ]
                 }
             ]
         }
