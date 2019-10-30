@@ -11,6 +11,7 @@
                 :button="button"
                 :price="price"
             />
+
         </CodePreview>
     </Layout>
 </template>

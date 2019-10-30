@@ -91,6 +91,15 @@ module.exports = {
                 {
                     title: 'Heading',
                     url: { name: 'Heading' }
+                },
+                {
+                    title: 'Layouts',
+                    children: [
+                        {
+                            title: 'Tetris',
+                            url: { name: 'Tetris' }
+                        }
+                    ]
                 }
             ]
         }

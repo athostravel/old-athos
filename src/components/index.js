@@ -8,6 +8,7 @@ import Option from './Option'
 import Picture from './Picture'
 import Select from './Select'
 import Textarea from './Textarea'
+import Layouts from './Layouts'
 
 export {
     Banner,
@@ -19,5 +20,6 @@ export {
     Option,
     Picture,
     Select,
-    Textarea
+    Textarea,
+    Layouts
 }
