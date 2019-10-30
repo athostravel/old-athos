@@ -124,7 +124,6 @@
           --c-text-background: var(--c-banner-title-background);
           --c-text-padding: var(--c-banner-title-padding);
           --c-text-color: var(--c-banner-title-color);
-
         }
 
         &__meta {

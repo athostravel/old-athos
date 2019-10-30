@@ -9,8 +9,8 @@
                 :picture="picture"
                 :button="button"
                 :price="price"
-                :titleText="titleText"
-                :metaText="metaText"
+                :title-text="titleText"
+                :meta-text="metaText"
             />
         </CodePreview>
     </Layout>
