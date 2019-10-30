@@ -9,8 +9,8 @@
                 :picture="picture"
                 :button="button"
                 :price="price"
-                :title-text="titleText"
-                :meta-text="metaText"
+                :title="title"
+                :meta="meta"
             />
         </CodePreview>
     </Layout>
@@ -39,12 +39,12 @@
                     text: 'desde',
                     value: '499'
                 },
-                titleText: {
+                title: {
                     text: 'Riviera Maya',
                     background: true,
                     tag: 'h3'
                 },
-                metaText: {
+                meta: {
                     text: '9 días y 7 noches',
                     background: true
                 }

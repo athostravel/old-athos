@@ -9,8 +9,8 @@
         :picture="picture"
     >
         <component :is="textTag" class="c-banner__text">
-            <AtText v-bind="metaText" class="c-banner__meta" />
-            <AtText v-bind="titleText" class="c-banner__title" />
+            <AtText v-bind="meta" class="c-banner__meta" />
+            <AtText v-bind="title" class="c-banner__title" />
         </component>
         <AtIconList
             :icons="icons"
@@ -43,11 +43,11 @@
                 type: String,
                 default: 'div'
             },
-            titleText: {
+            title: {
                 type: Object,
                 default: () => {}
             },
-            metaText: {
+            meta: {
                 type: Object,
                 default: () => {}
             },
@@ -80,11 +80,11 @@
       --c-banner-content-padding: 1em 1em 1em 0;
       --c-banner-meta-color: #fff;
       --c-banner-meta-background: #c6c6c6;
-      --c-banner-meta-padding: 0.75em 0.5em;
+      --c-banner-meta-padding: 0.5em;
       --c-banner-meta-font-size: 0.875em;
       --c-banner-title-color: #fff;
       --c-banner-title-background: #d6d6d6;
-      --c-banner-title-padding: 0.75em 0.5em;
+      --c-banner-title-padding: 0.5em;
       --c-banner-title-font-size: 1em;
 
       #{$this} {

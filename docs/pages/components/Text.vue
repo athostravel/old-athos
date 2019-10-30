@@ -13,7 +13,7 @@
         </Markdown>
 
         <CodePreview :vertical="true">
-            <AtText :background="true" />
+            <AtText background />
         </CodePreview>
     </Layout>
 </template>
