@@ -70,11 +70,9 @@
     import Layout from '@/layouts/Default.vue'
     import CodePreview from '@/components/CodePreview/CodePreview.vue'
     import Markdown from '@/components/Markdown/Markdown.vue'
-    import AtBannerSirius from '@lib/components/Banner/BannerSirius'
 
     export default {
         components: {
-            AtBannerSirius,
             Layout,
             CodePreview,
             Markdown
