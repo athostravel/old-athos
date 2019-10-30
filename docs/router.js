@@ -21,6 +21,7 @@ import Input from '@/pages/components/Input.vue'
 import Select from '@/pages/components/Select.vue'
 import Textarea from '@/pages/components/Textarea.vue'
 import Tetris from '@/pages/components/Tetris'
+import Text from '@/pages/components/Text'
 
 Vue.use(Router)
 
@@ -118,6 +119,11 @@ export default new Router({
                     path: 'tetris',
                     name: 'Tetris',
                     component: Tetris
+                },
+                {
+                    path: 'text',
+                    name: 'Text',
+                    component: Text
                 }
             ]
         }

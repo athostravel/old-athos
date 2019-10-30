@@ -8,6 +8,7 @@ import Option from './Option'
 import Picture from './Picture'
 import Select from './Select'
 import Textarea from './Textarea'
+import Text from './Text'
 import Layouts from './Layouts'
 
 export {
@@ -21,5 +22,6 @@ export {
     Picture,
     Select,
     Textarea,
+    Text,
     Layouts
 }
