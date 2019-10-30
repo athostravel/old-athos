@@ -1,17 +1,17 @@
 <template>
     <Layout>
         <Markdown>
-            # Banner Orion
+            # Banner Sirius
         </Markdown>
 
         <CodePreview width="435" vertical>
             <AtBannerSirius
-                title="¿Qué visitar en Vietnam en una semana?"
                 :picture="picture"
                 :button="button"
                 :price="price"
+                :title="title"
+                :meta="meta"
             />
-
         </CodePreview>
     </Layout>
 </template>
@@ -38,6 +38,15 @@
                     before: '600',
                     text: 'desde',
                     value: '499'
+                },
+                title: {
+                    text: 'Riviera Maya',
+                    background: true,
+                    tag: 'h3'
+                },
+                meta: {
+                    text: '9 días y 7 noches',
+                    background: true
                 }
             }
         }
