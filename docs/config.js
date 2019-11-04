@@ -62,6 +62,14 @@ module.exports = {
                         {
                             title: 'Textarea',
                             url: { name: 'Textarea' }
+                        },
+                        {
+                            title: 'Checkbox',
+                            url: { name: 'Checkbox' }
+                        },
+                        {
+                            title: 'Radio',
+                            url: { name: 'Radio' }
                         }
                     ]
                 },

@@ -12,12 +12,14 @@ import Banner from '@/pages/components/Banner.vue'
 import BannerOrion from '@/pages/components/BannerOrion.vue'
 import BannerSirius from '@/pages/components/BannerSirius.vue'
 import Button from '@/pages/components/Button.vue'
+import CheckBox from '@/pages/components/CheckBox.vue'
 import Heading from '@/pages/components/Heading.vue'
 import Icon from '@/pages/components/Icon.vue'
 import IconList from '@/pages/components/IconList.vue'
 import Price from '@/pages/components/Price.vue'
 import PriceButton from '@/pages/components/PriceButton.vue'
 import Input from '@/pages/components/Input.vue'
+import Radio from '@/pages/components/Radio.vue'
 import Select from '@/pages/components/Select.vue'
 import Textarea from '@/pages/components/Textarea.vue'
 import Tetris from '@/pages/components/Tetris'
@@ -76,6 +78,11 @@ export default new Router({
                     component: Button
                 },
                 {
+                    path: 'checkbox',
+                    name: 'Checkbox',
+                    component: CheckBox
+                },
+                {
                     path: 'heading',
                     name: 'Heading',
                     component: Heading
@@ -104,6 +111,11 @@ export default new Router({
                     path: 'input',
                     name: 'Input',
                     component: Input
+                },
+                {
+                    path: 'radio',
+                    name: 'Radio',
+                    component: Radio
                 },
                 {
                     path: 'select',
