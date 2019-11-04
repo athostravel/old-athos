@@ -51,11 +51,11 @@
 
 <style lang="scss">
     .c-tip {
-        --c-tip-icon-color: var(--color-secondary);
+        --c-tip-icon-color: var(--color-shade-1900);
         --c-tip-icon-font-size: var(--c-input-icon-font-size, 1.8em);
-        --c-tip-title-color: var(--color-primary);
+        --c-tip-title-color: var(--color-shade-1500);
         --c-tip-title-font-size: var(--font-size-m);
-        --c-tip-text-color: var(--color-primary);
+        --c-tip-text-color: var(--color-shade-1500);
         --c-tip-text-font-size: var(--font-size-xs);
         --c-tip-title-font-weight: 700;
 
