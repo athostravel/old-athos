@@ -57,6 +57,7 @@
         --c-tip-title-font-size: var(--font-size-m);
         --c-tip-text-color: var(--color-primary);
         --c-tip-text-font-size: var(--font-size-xs);
+        --c-tip-title-font-weight: 700;
 
         $this: &;
 
@@ -65,11 +66,10 @@
 
         &--icon {
             &-right {
-            flex-direction: row-reverse;
-
                 #{$this}__icon {
                     margin-right: 0;
                     margin-left: 1em;
+                    order: 1;
                 }
             }
 
@@ -97,15 +97,11 @@
             color: var(--c-tip-icon-color);
             margin-right: 1em;
         }
-
-        &__info {
-            width: 100%;
-        }
-
+        
         &__title {
             color: var(--c-tip-title-color);
             font-size: var(--c-tip-title-font-size);
-            font-weight: 700;
+            font-weight: var(--c-tip-title-font-weight);
             margin-bottom: .5em;
         }
 
