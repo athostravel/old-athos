@@ -11,6 +11,7 @@ import Radio from './Radio'
 import Select from './Select'
 import Textarea from './Textarea'
 import Text from './Text'
+import ToggleSwitch from './ToggleSwitch'
 import Layouts from './Layouts'
 
 export {
@@ -27,5 +28,6 @@ export {
     Select,
     Textarea,
     Text,
+    ToggleSwitch,
     Layouts
 }
