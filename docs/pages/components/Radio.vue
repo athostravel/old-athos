@@ -5,7 +5,7 @@
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtRadio label="Radio" name="option" id="option"/>
+            <AtRadio id="option" label="Radio" name="option" />
         </CodePreview>
     </Layout>
 </template>
