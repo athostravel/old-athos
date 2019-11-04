@@ -35,14 +35,17 @@
 
 <style lang="scss">
   .c-checkbox {
+    $this: &;
+
     --c-checkbox-dimensions: 1em;
     --c-checkbox-font-size: 1em;
-    --c-checkbox-input-border: 1px solid #dfe0e4;
+    --c-checkbox-input-border: #{em(1px)} solid #dfe0e4;
     --c-checkbox-input-background: #fff;
     --c-checkbox-input-radius: var(--radius-s);
     --c-checkbox-input-checked-background: #000;
-    --c-checkbox-input-checked-border: 1px solid #000;
+    --c-checkbox-input-checked-border: #{em(1px)} solid #000;
     --c-checkbox-icon: 'I';
+    --c-checkbox-align: center;
 
     display: flex;
     align-items: center;
@@ -53,7 +56,7 @@
       opacity: 0;
 
       &:checked {
-        & + label {
+        & + #{$this}__label {
           &::before {
             background: var(--c-checkbox-input-checked-background);
             border: var(--c-checkbox-input-checked-border);
@@ -67,7 +70,7 @@
 
     &__label {
       display: flex;
-      align-items: center;
+      align-items: var(--c-checkbox-align);
 
       &::before {
         transition: all 0.3s;
@@ -84,6 +87,7 @@
       }
 
       &-text {
+        flex: 1;
         font-size: var(--c-checkbox-font-size);
       }
     }
