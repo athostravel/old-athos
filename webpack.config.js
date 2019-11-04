@@ -13,8 +13,8 @@ const webpackConfig = (env) => {
     let options = {
         stats: 'minimal',
         entry: {
-            icons: './src/scss/icons.scss',
             styles: './src/scss/styles.scss',
+            app: './src/js/app.js',
             docs: ['./docs/assets/scss/docs.scss', './docs/main.js']
         },
         output: {
@@ -166,7 +166,7 @@ const webpackConfig = (env) => {
                 contentBase: ['./dist', './src', './docs'],
                 watchContentBase: true,
                 open: true,
-                compress: true,
+                compress: false,
                 hot: true,
                 port: 8080,
                 historyApiFallback: true

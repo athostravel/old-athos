@@ -8,9 +8,9 @@
 
         <CodePreview elements="horizontal" vertical>
             <AtButton text="Button" />
-            <AtButton text="Button" icon="avatar" />
-            <AtButton text="Button" icon="avatar" icon-align="right" />
-            <AtButton icon="avatar" />
+            <AtButton text="Button" icon="user" />
+            <AtButton text="Button" icon="user" icon-align="right" />
+            <AtButton icon="user" />
             <AtButton text="Disabled" disabled />
             <AtButton text="Tiny" size="tiny" />
             <AtButton text="Small" size="small" />
@@ -25,9 +25,9 @@
 
         <CodePreview elements="horizontal" vertical>
             <AtButton text="Casper" casper />
-            <AtButton text="Casper" icon="avatar" casper />
-            <AtButton text="Casper" icon="avatar" icon-align="right" casper />
-            <AtButton icon="avatar" casper />
+            <AtButton text="Casper" icon="user" casper />
+            <AtButton text="Casper" icon="user" icon-align="right" casper />
+            <AtButton icon="user" casper />
             <AtButton text="Disabled" disabled casper />
             <AtButton text="Tiny" size="tiny" casper />
             <AtButton text="Small" size="small" casper />
@@ -42,9 +42,9 @@
 
         <CodePreview elements="horizontal" vertical>
             <AtButton text="Outlined" outlined />
-            <AtButton text="Outlined" icon="avatar" outlined />
-            <AtButton text="Outlined" icon="avatar" icon-align="right" outlined />
-            <AtButton icon="avatar" outlined />
+            <AtButton text="Outlined" icon="user" outlined />
+            <AtButton text="Outlined" icon="user" icon-align="right" outlined />
+            <AtButton icon="user" outlined />
             <AtButton text="Disabled" disabled outlined />
             <AtButton text="Tiny" size="tiny" outlined />
             <AtButton text="Small" size="small" outlined />

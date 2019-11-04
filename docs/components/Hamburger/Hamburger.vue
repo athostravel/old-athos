@@ -5,7 +5,7 @@
         :class="{ 'is-active' : isBurgerActive }"
         @click.prevent="toggle"
     >
-        <span class="c-hamburger__icon fas fa-angle-left"></span>
+        <span class="c-hamburger__icon c-icon c-icon--angle-left"></span>
     </button>
 </template>
 
