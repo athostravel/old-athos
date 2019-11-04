@@ -14,7 +14,6 @@ const webpackConfig = (env) => {
         stats: 'minimal',
         entry: {
             styles: './src/scss/styles.scss',
-            app: './src/js/app.js',
             docs: ['./docs/assets/scss/docs.scss', './docs/main.js']
         },
         output: {
