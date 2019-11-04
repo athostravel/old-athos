@@ -3,7 +3,7 @@
         :is="tag"
         class="c-tip"
         :class="{
-            'c-tip--has-icon': icon !== undefined,
+            'c-tip--has-icon': icon,
             'c-tip--icon-right': iconAlign === 'right',
             'c-tip--icon-bottom': iconAlign === 'bottom',
             'c-tip--icon-top': iconAlign === 'top'
@@ -97,7 +97,7 @@
             color: var(--c-tip-icon-color);
             margin-right: 1em;
         }
-        
+
         &__title {
             color: var(--c-tip-title-color);
             font-size: var(--c-tip-title-font-size);
