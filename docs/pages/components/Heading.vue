@@ -1,14 +1,14 @@
 <template>
     <Layout>
         <Markdown>
-            # Banner
+            # Section Heading
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtBanner
-                valign="bottom"
-                align="center"
-                text="Button"
+            <AtHeading
+                title="Título de Encabezado"
+                :text="['Texto de encabezado opcional']"
+                icon="arrow-down"
             />
         </CodePreview>
     </Layout>

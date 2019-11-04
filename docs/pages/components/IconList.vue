@@ -1,15 +1,11 @@
 <template>
     <Layout>
         <Markdown>
-            # Banner
+            # Icon
         </Markdown>
 
-        <CodePreview width="435" vertical>
-            <AtBanner
-                valign="bottom"
-                align="center"
-                text="Button"
-            />
+        <CodePreview :vertical="true">
+            <AtIconList />
         </CodePreview>
     </Layout>
 </template>

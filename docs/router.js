@@ -10,12 +10,19 @@ import NotFound404 from '@/pages/NotFound404.vue'
 // Components
 import Banner from '@/pages/components/Banner.vue'
 import BannerOrion from '@/pages/components/BannerOrion.vue'
+import BannerSirius from '@/pages/components/BannerSirius.vue'
 import Button from '@/pages/components/Button.vue'
+import Heading from '@/pages/components/Heading.vue'
 import Icon from '@/pages/components/Icon.vue'
+import IconList from '@/pages/components/IconList.vue'
+import Price from '@/pages/components/Price.vue'
+import PriceButton from '@/pages/components/PriceButton.vue'
 import Input from '@/pages/components/Input.vue'
 import Select from '@/pages/components/Select.vue'
 import Textarea from '@/pages/components/Textarea.vue'
 import Tip from '@/pages/components/Tip.vue'
+import Tetris from '@/pages/components/Tetris'
+import Text from '@/pages/components/Text'
 
 Vue.use(Router)
 
@@ -60,14 +67,39 @@ export default new Router({
                     component: BannerOrion
                 },
                 {
+                    path: 'banner-sirius',
+                    name: 'BannerSirius',
+                    component: BannerSirius
+                },
+                {
                     path: 'button',
                     name: 'Button',
                     component: Button
                 },
                 {
+                    path: 'heading',
+                    name: 'Heading',
+                    component: Heading
+                },
+                {
                     path: 'icon',
                     name: 'Icon',
                     component: Icon
+                },
+                {
+                    path: 'icon-list',
+                    name: 'IconList',
+                    component: IconList
+                },
+                {
+                    path: 'price',
+                    name: 'Price',
+                    component: Price
+                },
+                {
+                    path: 'price-button',
+                    name: 'PriceButton',
+                    component: PriceButton
                 },
                 {
                     path: 'input',
@@ -88,6 +120,16 @@ export default new Router({
                     path: 'tip',
                     name: 'Tip',
                     component: Tip
+                },
+                {
+                    path: 'tetris',
+                    name: 'Tetris',
+                    component: Tetris
+                },
+                {
+                    path: 'text',
+                    name: 'Text',
+                    component: Text
                 }
             ]
         }

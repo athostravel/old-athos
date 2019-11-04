@@ -22,6 +22,10 @@ module.exports = {
                         {
                             title: 'BannerOrion',
                             url: { name: 'BannerOrion' }
+                        },
+                        {
+                            title: 'BannerSirius',
+                            url: { name: 'BannerSirius' }
                         }
                     ]
                 },
@@ -67,6 +71,42 @@ module.exports = {
                         {
                             title: 'Icon',
                             url: { name: 'Icon' }
+                        },
+                        {
+                            title: 'IconList',
+                            url: { name: 'IconList' }
+                        }
+                    ]
+                },
+                {
+                    title: 'Price',
+                    url: { name: 'Price' },
+                    children: [
+                        {
+                            title: 'PriceButton',
+                            url: { name: 'PriceButton' }
+                        }
+                    ]
+                },
+                {
+                    title: 'Heading',
+                    url: { name: 'Heading' }
+                },
+                {
+                    title: 'Layouts',
+                    children: [
+                        {
+                            title: 'Tetris',
+                            url: { name: 'Tetris' }
+                        }
+                    ]
+                },
+                {
+                    title: 'Text',
+                    children: [
+                        {
+                            title: 'Text',
+                            url: { name: 'Text' }
                         }
                     ]
                 },

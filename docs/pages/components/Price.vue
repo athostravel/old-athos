@@ -1,15 +1,11 @@
 <template>
     <Layout>
         <Markdown>
-            # Banner
+            # Price
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtBanner
-                valign="bottom"
-                align="center"
-                text="Button"
-            />
+            <AtPrice text="desde" before="600" value="400" />
         </CodePreview>
     </Layout>
 </template>
