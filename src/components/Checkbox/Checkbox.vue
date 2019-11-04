@@ -5,6 +5,10 @@
             class="c-checkbox__input"
             :type="type"
             :name="name"
+            :required="required"
+            :disabled="disabled"
+            :value="value"
+            :checked="checked"
         >
         <label v-if="label" class="c-checkbox__label" :for="idElement">
             <span class="c-checkbox__label-text">
