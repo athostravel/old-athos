@@ -31,12 +31,14 @@
 
 <style lang="scss">
   .c-checkbox {
-    --c-checkbox--font-size: 1em;
+    --c-checkbox-dimensions: 1em;
+    --c-checkbox-font-size: 1em;
     --c-checkbox-input-border: 1px solid #dfe0e4;
     --c-checkbox-input-background: #fff;
     --c-checkbox-input-radius: var(--radius-s);
     --c-checkbox-input-checked-background: #000;
     --c-checkbox-input-checked-border: 1px solid #000;
+    --c-checkbox-icon: 'I';
 
     display: flex;
     align-items: center;
@@ -51,7 +53,7 @@
           &::before {
             background: var(--c-checkbox-input-checked-background);
             border: var(--c-checkbox-input-checked-border);
-            content: 'ok';
+            content: var(--c-checkbox-icon);
             font-family: var(--font-family-icons);
             color: #fff;
           }
@@ -69,17 +71,16 @@
         border: var(--c-checkbox-input-border);
         background: var(--c-checkbox-input-background);
         border-radius: var(--c-checkbox-input-radius);
-        min-height: 20px;
-        min-width: 20px;
+        height: var(--c-checkbox-dimensions);
+        width: var(--c-checkbox-dimensions);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px;
-        margin-right: 8px;
+        margin-right: 0.5em;
       }
 
       &-text {
-        font-size: var(--c-checkbox--font-size);
+        font-size: var(--c-checkbox-font-size);
       }
     }
   }

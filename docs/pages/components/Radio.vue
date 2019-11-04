@@ -5,7 +5,7 @@
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtRadio label="Radio dfsdf" name="radio-option" />
+            <AtRadio label="Radio" name="option" id="option"/>
         </CodePreview>
     </Layout>
 </template>

@@ -3,7 +3,6 @@
         v-bind="$props"
         class="c-checkbox--radio"
         :type="type"
-        value="ass"
     />
 </template>
 

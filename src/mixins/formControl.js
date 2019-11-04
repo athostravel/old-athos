@@ -78,7 +78,7 @@ export default {
         },
         checked: {
             type: Boolean,
-            default: true
+            default: false
         },
         autocomplete: {
             type: Boolean,
