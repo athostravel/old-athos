@@ -14,6 +14,9 @@
             :checked="checked"
         >
         <span class="c-toggle-switch__slider"></span>
+        <span v-if="text" class="c-toggle-switch__text">
+            {{ text }}
+        </span>
     </label>
 </template>
 
@@ -31,6 +34,10 @@
             disabled: {
                 type: Boolean,
                 default: false
+            },
+            text: {
+                type: String,
+                default: undefined
             }
         }
     }
@@ -49,9 +56,12 @@
     --c-toggle-swith-slider-background: #ccc;
     --c-toggle-swith-slider-active-background: #000;
     --c-toggle-swith-slider-transform: #{em(4px)};
+    --c-toggle-switch-text-font-size: 1rem;
+    --c-toggle-switch-text-padding-left: var(--c-toggle-swith-slider-width);
 
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: var(--c-toggle-swith-width);
     height: var(--c-toggle-swith-height);
 
@@ -69,6 +79,11 @@
           }
         }
       }
+    }
+
+    &__text {
+      padding-left: calc(var(--c-toggle-swith-width) + 0.5rem);
+      font-size: var(--c-toggle-switch-text-font-size);
     }
 
     &__slider {

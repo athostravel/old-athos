@@ -5,7 +5,7 @@
         </Markdown>
 
         <CodePreview width="435" vertical>
-            <AtToggleSwitch id="toggleSwitch" label=" " name="toggleSwitch"/>
+            <AtToggleSwitch id="toggleSwitch" label=" " name="toggleSwitch" text="text" />
         </CodePreview>
     </Layout>
 </template>
