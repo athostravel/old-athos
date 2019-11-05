@@ -70,6 +70,10 @@ module.exports = {
                         {
                             title: 'Radio',
                             url: { name: 'Radio' }
+                        },
+                        {
+                            title: 'Toggle Switch',
+                            url: { name: 'ToggleSwitch' }
                         }
                     ]
                 },

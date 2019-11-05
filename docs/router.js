@@ -24,6 +24,7 @@ import Select from '@/pages/components/Select.vue'
 import Textarea from '@/pages/components/Textarea.vue'
 import Tetris from '@/pages/components/Tetris'
 import Text from '@/pages/components/Text'
+import ToggleSwitch from '@/pages/components/ToggleSwitch'
 
 Vue.use(Router)
 
@@ -136,6 +137,11 @@ export default new Router({
                     path: 'text',
                     name: 'Text',
                     component: Text
+                },
+                {
+                    path: 'toggle-switch',
+                    name: 'ToggleSwitch',
+                    component: ToggleSwitch
                 }
             ]
         }
