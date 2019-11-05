@@ -43,16 +43,16 @@
   .c-toggle-switch {
     $this: &;
 
-    --c-toggle-swith-width: 3rem;
-    --c-toggle-swith-height: 1.5rem;
-    --c-toggle-swith-slider-width: 1rem;
-    --c-toggle-swith-slider-height: 1rem;
+    --c-toggle-swith-width: 3em;
+    --c-toggle-swith-height: 1.5em;
+    --c-toggle-swith-slider-width: 1em;
+    --c-toggle-swith-slider-height: 1em;
     --c-toggle-swith-slider-border: #{em(1px)} solid #888;
-    --c-toggle-swith-slider-radius: 2rem;
+    --c-toggle-swith-slider-radius: 2em;
     --c-toggle-swith-slider-background: #ccc;
     --c-toggle-swith-slider-active-background: #000;
     --c-toggle-swith-slider-transform: #{em(4px)};
-    --c-toggle-switch-text-font-size: 1rem;
+    --c-toggle-switch-text-font-size: 1em;
     --c-toggle-switch-text-padding-left: var(--c-toggle-swith-slider-width);
 
     position: relative;
@@ -78,7 +78,7 @@
     }
 
     &__text {
-      padding-left: calc(var(--c-toggle-swith-width) + 0.5rem);
+      padding-left: calc(var(--c-toggle-swith-width) + 0.5em);
       font-size: var(--c-toggle-switch-text-font-size);
     }
 
