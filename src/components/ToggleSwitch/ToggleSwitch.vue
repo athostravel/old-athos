@@ -14,8 +14,8 @@
             :checked="checked"
         >
         <span class="c-toggle-switch__slider"></span>
-        <span v-if="text" class="c-toggle-switch__text">
-            {{ text }}
+        <span v-if="label" class="c-toggle-switch__text">
+            {{ label }}
         </span>
     </label>
 </template>
@@ -34,10 +34,6 @@
             disabled: {
                 type: Boolean,
                 default: false
-            },
-            text: {
-                type: String,
-                default: undefined
             }
         }
     }
