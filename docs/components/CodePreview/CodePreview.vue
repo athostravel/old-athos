@@ -5,7 +5,7 @@
                 Example
             </div>
             <button class="c-code-preview__legend c-code-preview__legend--link" @click.prevent="expandPreview()">
-                Preview <span class="fas fa-expand-arrows-alt"></span>
+                Preview <span class="c-icon c-icon--expand"></span>
             </button>
         </div>
         <div class="c-code-preview__inner">
@@ -22,7 +22,7 @@
                     <slot />
                 </div>
                 <button v-show="isPreviewExpanded" class="c-code-preview__close" @click.prevent="closePreview()">
-                    <span class="fas fa-compress-arrows-alt"></span>
+                    <span class="c-icon c-icon--compress"></span>
                 </button>
             </div>
             <div class="c-code-preview__box">
@@ -35,8 +35,8 @@
                         <slot />
                     </CodeSnippet>
                     <button v-if="preview" class="c-code-preview__show-box" :class="{ 'is-active': isCodeOpen }" @click="toggleCode()">
-                        <span v-show="!isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon fas fa-code"></span> Show code</span>
-                        <span v-show="isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon fas fa-eye-slash"></span> Hide code</span>
+                        <span v-show="!isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon c-icon c-icon--code"></span> Show code</span>
+                        <span v-show="isCodeOpen" class="c-code-preview__show-item"><span class="c-code-preview__show-icon c-icon c-icon--eye-slash"></span> Hide code</span>
                     </button>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="c-search">
         <div class="c-search__inner">
-            <span class="c-search__icon fas fa-search"></span>
+            <span class="c-search__icon c-icon c-icon---search"></span>
             <input
                 v-model="search"
                 class="c-search__element"
