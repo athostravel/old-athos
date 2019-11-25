@@ -14,7 +14,6 @@
 </template>
 
 <script>
-    import { store, mutations } from '@/store/nav.js'
     import Navigation from '@/components/Navigation/Navigation.vue'
     import Search from '@/components/Search/Search.vue'
     import Hamburger from '@/components/Hamburger/Hamburger.vue'
@@ -27,11 +26,8 @@
         },
         computed: {
             isPanelOpen () {
-                return store.isNavOpen
+                return this.$store.state.nav.isNavOpen
             }
-        },
-        methods: {
-            closeSidebarPanel: mutations.toggleNav
         }
     }
 </script>

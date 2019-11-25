@@ -5,12 +5,10 @@
 </template>
 
 <script>
-    import { store as storeOverlay } from '@/store/overlay.js'
-
     export default {
         computed: {
             isModalActive () {
-                return storeOverlay.isModalOpen
+                return this.$store.state.overlay.isModalOpen
             }
         },
         updated () {

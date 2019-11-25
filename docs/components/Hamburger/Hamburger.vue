@@ -10,17 +10,15 @@
 </template>
 
 <script>
-    import { store, mutations } from '@/store/nav.js'
-
     export default {
         computed: {
             isBurgerActive () {
-                return store.isNavOpen
+                return this.$store.state.nav.isNavOpen
             }
         },
         methods: {
             toggle () {
-                mutations.toggleNav()
+                this.$store.commit('nav/toggleNav')
             }
         }
     }

@@ -46,8 +46,6 @@
 
 <script>
     import CodeSnippet from '@/components/CodeSnippet/CodeSnippet.vue'
-    import { store } from '@/store/nav.js'
-    import { store as storeOverlay } from '@/store/overlay.js'
 
     export default {
         components: {
@@ -85,13 +83,13 @@
             },
             expandPreview () {
                 this.isPreviewExpanded = true
-                store.isNavOpen = false
-                storeOverlay.isModalOpen = this.isPreviewExpanded
+                this.$store.commit('nav/toggleNav', false)
+                this.$store.commit('overlay/toggleOverlay', this.isPreviewExpanded)
             },
             closePreview () {
                 this.isPreviewExpanded = false
-                store.isNavOpen = true
-                storeOverlay.isModalOpen = this.isPreviewExpanded
+                this.$store.commit('nav/toggleNav', true)
+                this.$store.commit('overlay/toggleOverlay', this.isPreviewExpanded)
             },
             toggleCode () {
                 this.isCodeOpen = !this.isCodeOpen

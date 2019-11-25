@@ -1,11 +1,21 @@
-import Vue from 'vue'
-
-export const store = Vue.observable({
+const state = {
     isNavOpen: true
-})
+}
 
-export const mutations = {
-    toggleNav () {
-        store.isNavOpen = !store.isNavOpen
+const mutations = {
+    toggleNav (state, value = !state.isNavOpen) {
+        state.isNavOpen = value
     }
+}
+
+const actions = {}
+
+const getters = {}
+
+export default {
+    namespaced: true,
+    state,
+    mutations,
+    actions,
+    getters
 }

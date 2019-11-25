@@ -1,11 +1,21 @@
-import Vue from 'vue'
+const state = {
+    isModalOpen: true
+}
 
-export const store = Vue.observable({
-    isModalOpen: false
-})
-
-export const mutations = {
-    toggleOverlay () {
-        store.isModalOpen = !store.isModalOpen
+const mutations = {
+    toggleOverlay (state, value = !state.isModalOpen) {
+        state.isModalOpen = value
     }
+}
+
+const actions = {}
+
+const getters = {}
+
+export default {
+    namespaced: true,
+    state,
+    mutations,
+    actions,
+    getters
 }
